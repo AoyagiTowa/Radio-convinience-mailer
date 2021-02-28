@@ -30,6 +30,8 @@ class AddUserViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         // Do any additional setup after loading the view.
     }
     
+    
+    //プルダウンメニューを作る処理
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
