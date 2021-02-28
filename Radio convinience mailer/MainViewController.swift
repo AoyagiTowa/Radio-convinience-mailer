@@ -9,12 +9,16 @@ import UIKit
 
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
-    @IBOutlet var table: UITableView!
+    @IBOutlet weak var table: UITableView!
     
-
+    @IBOutlet var makeMailButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        table.register(UINib(nibName: "CustomCellTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomCell")
+        makeMailButton.layer.cornerRadius = 32
+        
+        
         // Do any additional setup after loading the view.
     }
     
@@ -24,22 +28,29 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
-        return cell!
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell") as? CustomCellTableViewCell {
+            return cell
+            }
+            return UITableViewCell()
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func addRadioInfo() {
     }
-    */
-
+    
+    @IBAction func makeMail() {
+    }
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
