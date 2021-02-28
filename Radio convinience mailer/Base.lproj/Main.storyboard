@@ -75,9 +75,18 @@
                     </view>
                     <navigationItem key="navigationItem" id="WqN-XD-hiM">
                         <barButtonItem key="leftBarButtonItem" title="戻る" id="G2m-Ws-adY"/>
-                        <barButtonItem key="rightBarButtonItem" title="保存" id="7P8-Gh-MfZ"/>
+                        <barButtonItem key="rightBarButtonItem" title="送信" id="7P8-Gh-MfZ">
+                            <connections>
+                                <action selector="send" destination="BYZ-38-t0r" id="HXY-ph-Jmq"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="contentField" destination="2QI-gD-glG" id="nbt-dt-z5P"/>
+                        <outlet property="mainTitleField" destination="XHS-Es-F3A" id="TmG-kv-K3A"/>
+                        <outlet property="senderAdressField" destination="Flx-dS-5cB" id="6fz-xU-zCM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
