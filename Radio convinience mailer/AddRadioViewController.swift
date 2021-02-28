@@ -53,6 +53,7 @@ class AddRadioViewController: UIViewController {
         
         //ここが上手くかない、多分UUIDが変
         saveData.set(radioClass, forKey: radioClass.uuid.uuidString)
+        saveData.set(radioClass.uuid.uuidString, forKey: "key")
     }
     
     /*
