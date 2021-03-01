@@ -15,8 +15,8 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate,UIPi
     @IBOutlet var contentField: UITextView!
     var pickerView: UIPickerView = UIPickerView()
     let mailList = ["banana@tbs.co.jp","nogizaka@allnightnippon.com","megane@tbs.co.jp"]
-
-
+    
+    
     
     
     
@@ -25,7 +25,6 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate,UIPi
         sendMail()
         pickerView.delegate = self
         pickerView.dataSource = self
-        pickerView.showsSelectionIndicator = true
         self.senderAdressField.inputView = pickerView
         // Do any additional setup after loading the view.
     }
@@ -34,17 +33,13 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate,UIPi
         
     }
     func sendMail() {
-        if contentField.text == nil {
+        if contentField.text == nil ||
+            senderAdressField == nil ||
+            mainTitleField == nil {
             return
         }
         
-        if senderAdressField == nil {
-            return
-        }
         
-        if mainTitleField == nil{
-            return
-        }
         
         //メール送信が可能なら
         if MFMailComposeViewController.canSendMail() {
@@ -61,7 +56,6 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate,UIPi
             mail.setMessageBody("テストメール", isHTML: false)
             //メールを表示
             self.present(mail, animated: true, completion: nil)
-            print("scucess")
             
             //メール送信が不可能なら
         } else {
@@ -70,7 +64,6 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate,UIPi
             let dismiss = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alert.addAction(dismiss)
             self.present(alert, animated: true, completion: nil)
-            print("fail")
         }
     }
     
@@ -78,7 +71,6 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate,UIPi
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         if error != nil {
             //送信失敗
-            print(error)
         } else {
             switch result {
             case .cancelled: break

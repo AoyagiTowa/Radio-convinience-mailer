@@ -42,7 +42,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell") as? CustomTableViewCell {
-            cell.Viewroad(name: radio_array[indexPath.row].radioName,address: radio_array[indexPath.row].radioAddress,startTime: radio_array[indexPath.row].radioStart,finishTime: radio_array[indexPath.row].radioStop,isOn: radio_array[indexPath.row].radioDays)
+            cell.viewLoad(name: radio_array[indexPath.row].radioName,address: radio_array[indexPath.row].radioAddress,startTime: radio_array[indexPath.row].radioStart,finishTime: radio_array[indexPath.row].radioStop,isOn: radio_array[indexPath.row].radioDays)
             return cell
         }
         return UITableViewCell()
@@ -51,9 +51,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
-    }
+
     
     @IBAction func addRadioInfo() {
     }
