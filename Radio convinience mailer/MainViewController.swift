@@ -19,7 +19,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         makeMailButton.layer.cornerRadius = 32
         table.dataSource = self
         table.delegate = self
-        
+        table.rowHeight = 120
         
         // Do any additional setup after loading the view.
     }
