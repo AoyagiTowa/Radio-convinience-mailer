@@ -24,11 +24,11 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         table.dataSource = self
         table.delegate = self
         //ここに何もない時も許容できるようにする
-        key_array = (saveData.object(forKey: "key") as! [String])
-        for i in key_array {
-            let radio_value: RadioClass = saveData.object(forKey: i) as! RadioClass
-            radio_array.append(radio_value)
-        }
+        //key_array = (saveData.object(forKey: "key") as! [String]) ?? []
+//        for i in key_array {
+//            let radio_value: RadioClass = saveData.object(forKey: i) as! RadioClass
+//            radio_array.append(radio_value)
+//        }
         
         
         // Do any additional setup after loading the view.

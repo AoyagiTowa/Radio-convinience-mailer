@@ -8,17 +8,25 @@
 import UIKit
 import MessageUI
 
-class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
+class ViewController: UIViewController, MFMailComposeViewControllerDelegate,UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet var senderAdressField: UITextField!
     @IBOutlet var mainTitleField: UITextField!
-    @IBOutlet var contentField: UITextField!
+    @IBOutlet var contentField: UITextView!
+    var pickerView: UIPickerView = UIPickerView()
+    let mailList = ["banana@tbs.co.jp","nogizaka@allnightnippon.com","megane@tbs.co.jp"]
+
+
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         sendMail()
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        pickerView.showsSelectionIndicator = true
+        self.senderAdressField.inputView = pickerView
         // Do any additional setup after loading the view.
     }
     
@@ -84,6 +92,22 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
             }
             controller.dismiss(animated: true, completion: nil)
         }
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return mailList.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return mailList[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.senderAdressField.text = mailList[row]
     }
     
     

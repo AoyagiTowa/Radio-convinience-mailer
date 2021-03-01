@@ -34,11 +34,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2QI-gD-glG">
-                                <rect key="frame" x="32" y="338" width="350" height="492"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="宛先" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5K-qE-h1u">
                                 <rect key="frame" x="32" y="152" width="35" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -50,25 +45,32 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="csP-KW-Pgf">
+                                <rect key="frame" x="32" y="322" width="350" height="524"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="z5K-qE-h1u" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="6eA-E2-FA9"/>
+                            <constraint firstItem="csP-KW-Pgf" firstAttribute="top" secondItem="lAV-av-sTf" secondAttribute="bottom" constant="8" id="CBe-uo-5BF"/>
                             <constraint firstItem="z5K-qE-h1u" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="64" id="CUJ-Dw-yHI"/>
                             <constraint firstItem="nGh-uK-oef" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="DCi-lU-1Jm"/>
                             <constraint firstItem="Flx-dS-5cB" firstAttribute="centerY" secondItem="z5K-qE-h1u" secondAttribute="centerY" id="IIk-RQ-IKN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="csP-KW-Pgf" secondAttribute="bottom" constant="16" id="SmN-NO-yNN"/>
                             <constraint firstItem="lAV-av-sTf" firstAttribute="top" secondItem="nGh-uK-oef" secondAttribute="bottom" constant="54" id="X6E-B3-QNb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Flx-dS-5cB" secondAttribute="trailing" constant="32" id="ap0-hy-f6s"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2QI-gD-glG" secondAttribute="bottom" constant="32" id="beu-aP-HSe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XHS-Es-F3A" secondAttribute="trailing" constant="32" id="d6w-WO-oBa"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2QI-gD-glG" secondAttribute="trailing" constant="32" id="do8-NS-RYc"/>
                             <constraint firstItem="XHS-Es-F3A" firstAttribute="leading" secondItem="nGh-uK-oef" secondAttribute="trailing" constant="16" id="hFN-Vf-lfs"/>
                             <constraint firstItem="lAV-av-sTf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="hZO-am-37m"/>
+                            <constraint firstItem="csP-KW-Pgf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="iIK-ks-iUE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="csP-KW-Pgf" secondAttribute="trailing" constant="32" id="ifL-H1-wWs"/>
                             <constraint firstItem="XHS-Es-F3A" firstAttribute="centerY" secondItem="nGh-uK-oef" secondAttribute="centerY" id="mgu-Px-Jcq"/>
                             <constraint firstItem="nGh-uK-oef" firstAttribute="top" secondItem="z5K-qE-h1u" secondAttribute="bottom" constant="32" id="nxC-vn-kbY"/>
-                            <constraint firstItem="2QI-gD-glG" firstAttribute="top" secondItem="lAV-av-sTf" secondAttribute="bottom" constant="24" id="qBs-xJ-nuq"/>
-                            <constraint firstItem="2QI-gD-glG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="toy-Mj-Ehc"/>
                             <constraint firstItem="XHS-Es-F3A" firstAttribute="top" secondItem="nGh-uK-oef" secondAttribute="top" id="uos-AR-Kc6"/>
                             <constraint firstItem="Flx-dS-5cB" firstAttribute="leading" secondItem="z5K-qE-h1u" secondAttribute="trailing" constant="32" id="wdY-Hu-x62"/>
                         </constraints>
@@ -83,7 +85,7 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="contentField" destination="2QI-gD-glG" id="nbt-dt-z5P"/>
+                        <outlet property="contentField" destination="csP-KW-Pgf" id="RsR-Fy-6Gr"/>
                         <outlet property="mainTitleField" destination="XHS-Es-F3A" id="TmG-kv-K3A"/>
                         <outlet property="senderAdressField" destination="Flx-dS-5cB" id="6fz-xU-zCM"/>
                     </connections>
@@ -456,6 +458,9 @@
     </scenes>
     <resources>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
