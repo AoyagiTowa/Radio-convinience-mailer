@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A122B7025ECB37600DE67AB /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A122B6E25ECB37600DE67AB /* CustomTableViewCell.swift */; };
+		8A122B7125ECB37600DE67AB /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A122B6F25ECB37600DE67AB /* CustomTableViewCell.xib */; };
 		8A98609D25EB9C0100D2A7A6 /* CustomCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A98609B25EB9C0100D2A7A6 /* CustomCellTableViewCell.swift */; };
 		8A98609E25EB9C0100D2A7A6 /* CustomCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A98609C25EB9C0100D2A7A6 /* CustomCellTableViewCell.xib */; };
 		8AA74AAA25E39E200092F1CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA74AA925E39E200092F1CB /* AppDelegate.swift */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A122B6E25ECB37600DE67AB /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		8A122B6F25ECB37600DE67AB /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		8A98609B25EB9C0100D2A7A6 /* CustomCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellTableViewCell.swift; sourceTree = "<group>"; };
 		8A98609C25EB9C0100D2A7A6 /* CustomCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCellTableViewCell.xib; sourceTree = "<group>"; };
 		8AA74AA625E39E200092F1CB /* Radio convinience mailer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Radio convinience mailer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +88,8 @@
 				8ACAA90625E636A1003C65C2 /* RadioClass.swift */,
 				8A98609B25EB9C0100D2A7A6 /* CustomCellTableViewCell.swift */,
 				8A98609C25EB9C0100D2A7A6 /* CustomCellTableViewCell.xib */,
+				8A122B6E25ECB37600DE67AB /* CustomTableViewCell.swift */,
+				8A122B6F25ECB37600DE67AB /* CustomTableViewCell.xib */,
 			);
 			path = "Radio convinience mailer";
 			sourceTree = "<group>";
@@ -148,6 +154,7 @@
 				8AA74AB625E39E220092F1CB /* LaunchScreen.storyboard in Resources */,
 				8AA74AB325E39E220092F1CB /* Assets.xcassets in Resources */,
 				8A98609E25EB9C0100D2A7A6 /* CustomCellTableViewCell.xib in Resources */,
+				8A122B7125ECB37600DE67AB /* CustomTableViewCell.xib in Resources */,
 				8AA74AB125E39E200092F1CB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -165,6 +172,7 @@
 				8AA74AAA25E39E200092F1CB /* AppDelegate.swift in Sources */,
 				8AA74AAC25E39E200092F1CB /* SceneDelegate.swift in Sources */,
 				8A98609D25EB9C0100D2A7A6 /* CustomCellTableViewCell.swift in Sources */,
+				8A122B7025ECB37600DE67AB /* CustomTableViewCell.swift in Sources */,
 				8ACAA90425E63634003C65C2 /* AddUserViewController.swift in Sources */,
 				8ACAA90125E63625003C65C2 /* AddRadioViewController.swift in Sources */,
 				8ACAA8FB25E635C8003C65C2 /* MainViewController.swift in Sources */,

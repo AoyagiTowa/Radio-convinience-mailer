@@ -17,62 +17,78 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="件名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGh-uK-oef">
-                                <rect key="frame" x="32" y="161" width="35" height="34"/>
+                                <rect key="frame" x="32" y="205" width="35" height="34"/>
                                 <color key="tintColor" red="0.066666666669999999" green="0.066666666669999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XHS-Es-F3A">
-                                <rect key="frame" x="83" y="161" width="299" height="34"/>
+                                <rect key="frame" x="83" y="205" width="299" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本文" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAV-av-sTf">
-                                <rect key="frame" x="32" y="249" width="35" height="21"/>
+                                <rect key="frame" x="32" y="293" width="35" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2QI-gD-glG">
-                                <rect key="frame" x="32" y="294" width="350" height="536"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="宛先" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5K-qE-h1u">
-                                <rect key="frame" x="32" y="108" width="35" height="21"/>
+                                <rect key="frame" x="32" y="152" width="35" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="↓" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Flx-dS-5cB">
-                                <rect key="frame" x="99" y="101.5" width="283" height="34"/>
+                                <rect key="frame" x="99" y="145.5" width="283" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="csP-KW-Pgf">
+                                <rect key="frame" x="32" y="322" width="350" height="524"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="z5K-qE-h1u" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="6eA-E2-FA9"/>
+                            <constraint firstItem="csP-KW-Pgf" firstAttribute="top" secondItem="lAV-av-sTf" secondAttribute="bottom" constant="8" id="CBe-uo-5BF"/>
                             <constraint firstItem="z5K-qE-h1u" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="64" id="CUJ-Dw-yHI"/>
                             <constraint firstItem="nGh-uK-oef" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="DCi-lU-1Jm"/>
                             <constraint firstItem="Flx-dS-5cB" firstAttribute="centerY" secondItem="z5K-qE-h1u" secondAttribute="centerY" id="IIk-RQ-IKN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="csP-KW-Pgf" secondAttribute="bottom" constant="16" id="SmN-NO-yNN"/>
                             <constraint firstItem="lAV-av-sTf" firstAttribute="top" secondItem="nGh-uK-oef" secondAttribute="bottom" constant="54" id="X6E-B3-QNb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Flx-dS-5cB" secondAttribute="trailing" constant="32" id="ap0-hy-f6s"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2QI-gD-glG" secondAttribute="bottom" constant="32" id="beu-aP-HSe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XHS-Es-F3A" secondAttribute="trailing" constant="32" id="d6w-WO-oBa"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2QI-gD-glG" secondAttribute="trailing" constant="32" id="do8-NS-RYc"/>
                             <constraint firstItem="XHS-Es-F3A" firstAttribute="leading" secondItem="nGh-uK-oef" secondAttribute="trailing" constant="16" id="hFN-Vf-lfs"/>
                             <constraint firstItem="lAV-av-sTf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="hZO-am-37m"/>
+                            <constraint firstItem="csP-KW-Pgf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="iIK-ks-iUE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="csP-KW-Pgf" secondAttribute="trailing" constant="32" id="ifL-H1-wWs"/>
                             <constraint firstItem="XHS-Es-F3A" firstAttribute="centerY" secondItem="nGh-uK-oef" secondAttribute="centerY" id="mgu-Px-Jcq"/>
                             <constraint firstItem="nGh-uK-oef" firstAttribute="top" secondItem="z5K-qE-h1u" secondAttribute="bottom" constant="32" id="nxC-vn-kbY"/>
-                            <constraint firstItem="2QI-gD-glG" firstAttribute="top" secondItem="lAV-av-sTf" secondAttribute="bottom" constant="24" id="qBs-xJ-nuq"/>
-                            <constraint firstItem="2QI-gD-glG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="toy-Mj-Ehc"/>
                             <constraint firstItem="XHS-Es-F3A" firstAttribute="top" secondItem="nGh-uK-oef" secondAttribute="top" id="uos-AR-Kc6"/>
                             <constraint firstItem="Flx-dS-5cB" firstAttribute="leading" secondItem="z5K-qE-h1u" secondAttribute="trailing" constant="32" id="wdY-Hu-x62"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="WqN-XD-hiM">
+                        <barButtonItem key="leftBarButtonItem" title="戻る" id="G2m-Ws-adY"/>
+                        <barButtonItem key="rightBarButtonItem" title="送信" id="7P8-Gh-MfZ">
+                            <connections>
+                                <action selector="send" destination="BYZ-38-t0r" id="HXY-ph-Jmq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="contentField" destination="csP-KW-Pgf" id="RsR-Fy-6Gr"/>
+                        <outlet property="mainTitleField" destination="XHS-Es-F3A" id="TmG-kv-K3A"/>
+                        <outlet property="senderAdressField" destination="Flx-dS-5cB" id="6fz-xU-zCM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -86,13 +102,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ラジオ番組名を入力してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="omN-8h-e0d">
-                                <rect key="frame" x="32" y="120" width="350" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="アドレスを記入してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="haG-BA-r2x">
-                                <rect key="frame" x="32" y="186" width="350" height="34"/>
+                                <rect key="frame" x="32" y="187.5" width="350" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -195,6 +206,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ラジオ番組名を入力してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="omN-8h-e0d">
+                                <rect key="frame" x="32" y="121.5" width="350" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eKd-ky-RPf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -209,7 +225,6 @@
                             <constraint firstItem="ltd-xV-Rwz" firstAttribute="top" secondItem="LHd-OD-dIy" secondAttribute="bottom" constant="16" id="KWU-nr-i8L"/>
                             <constraint firstItem="haG-BA-r2x" firstAttribute="leading" secondItem="eKd-ky-RPf" secondAttribute="leading" constant="32" id="KxC-Bi-pwA"/>
                             <constraint firstItem="eKd-ky-RPf" firstAttribute="trailing" secondItem="haG-BA-r2x" secondAttribute="trailing" constant="32" id="L53-vJ-aJF"/>
-                            <constraint firstItem="omN-8h-e0d" firstAttribute="top" secondItem="eKd-ky-RPf" secondAttribute="top" constant="64" id="LUY-rA-6xp"/>
                             <constraint firstItem="omN-8h-e0d" firstAttribute="leading" secondItem="eKd-ky-RPf" secondAttribute="leading" constant="32" id="Uwc-GE-LLK"/>
                             <constraint firstItem="X0g-gi-ppc" firstAttribute="centerX" secondItem="d5r-OS-n6I" secondAttribute="centerX" id="VFi-sA-E8E"/>
                             <constraint firstItem="z6l-6w-eWQ" firstAttribute="top" secondItem="X0g-gi-ppc" secondAttribute="bottom" constant="16" id="VGq-ek-w0m"/>
@@ -217,6 +232,7 @@
                             <constraint firstItem="eKd-ky-RPf" firstAttribute="trailing" secondItem="omN-8h-e0d" secondAttribute="trailing" constant="32" id="aJ8-VW-u4z"/>
                             <constraint firstItem="z6l-6w-eWQ" firstAttribute="centerX" secondItem="d5r-OS-n6I" secondAttribute="centerX" id="b0m-za-fx3"/>
                             <constraint firstItem="LHd-OD-dIy" firstAttribute="top" secondItem="1DY-k8-35v" secondAttribute="bottom" constant="48" id="eQW-8F-Odx"/>
+                            <constraint firstItem="omN-8h-e0d" firstAttribute="top" secondItem="eKd-ky-RPf" secondAttribute="top" constant="64" id="l0I-Gj-hYE"/>
                             <constraint firstItem="smL-3R-wfz" firstAttribute="top" secondItem="haG-BA-r2x" secondAttribute="bottom" constant="64" id="l4D-cC-5p2"/>
                             <constraint firstItem="smL-3R-wfz" firstAttribute="leading" secondItem="eKd-ky-RPf" secondAttribute="leading" constant="8" id="oXG-8f-CHq"/>
                             <constraint firstItem="haG-BA-r2x" firstAttribute="top" secondItem="omN-8h-e0d" secondAttribute="bottom" constant="32" id="tdG-8j-hvT"/>
@@ -224,16 +240,30 @@
                     </view>
                     <navigationItem key="navigationItem" id="BDx-A8-iNT">
                         <barButtonItem key="leftBarButtonItem" title="戻る" id="QTd-Vo-mZP"/>
-                        <barButtonItem key="rightBarButtonItem" title="保存" id="oHX-pB-dmF"/>
+                        <barButtonItem key="rightBarButtonItem" title="保存" id="oHX-pB-dmF">
+                            <connections>
+                                <action selector="save" destination="0Il-xt-99k" id="6VL-qr-dM6"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="finishTimePIcker" destination="X0g-gi-ppc" id="b4f-Fn-HaA"/>
+                        <outlet property="fridaySwitch" destination="VQl-aN-e95" id="bDO-Vv-reV"/>
+                        <outlet property="mondaySwitch" destination="A4S-wh-zR7" id="0eW-h4-rtm"/>
+                        <outlet property="radioAdressField" destination="haG-BA-r2x" id="3DV-aG-sSV"/>
                         <outlet property="radioNameField" destination="omN-8h-e0d" id="cc7-jj-sSM"/>
+                        <outlet property="saturdaySwitch" destination="s11-VQ-Igh" id="P80-b4-XJk"/>
+                        <outlet property="startTimePicker" destination="ltd-xV-Rwz" id="0l1-IY-idd"/>
+                        <outlet property="sundaySwitch" destination="7B3-jh-BYF" id="b4n-79-1i7"/>
+                        <outlet property="tuesdaySwitch" destination="ill-9h-dKM" id="uSF-nv-b54"/>
+                        <outlet property="tursdaySwitch" destination="1yv-5g-oZT" id="MpR-YQ-Y6k"/>
+                        <outlet property="wednesdaySwitch" destination="7T5-DF-EdN" id="aFf-YP-4ra"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k6m-pW-BCn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-977" y="-632"/>
+            <point key="canvasLocation" x="-978" y="-632"/>
         </scene>
         <!--About Radio View Controller-->
         <scene sceneID="Jg7-ht-OGh">
@@ -290,6 +320,7 @@
                                 <state key="normal" image="plus" catalog="system"/>
                                 <connections>
                                     <action selector="makeMail" destination="4wV-PO-SK7" eventType="touchUpInside" id="pJz-gQ-h50"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="ank-8U-MHf"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -308,7 +339,7 @@
                         <barButtonItem key="rightBarButtonItem" title="追加" id="kbE-Ed-XuY">
                             <connections>
                                 <action selector="addRadioInfo" destination="4wV-PO-SK7" id="EL5-6s-41z"/>
-                                <segue destination="0Il-xt-99k" kind="presentation" id="icS-0F-KuI"/>
+                                <segue destination="0Il-xt-99k" kind="show" id="icS-0F-KuI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -385,6 +416,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xkI-2D-6Vp">
+                                <rect key="frame" x="107" y="738" width="200" height="60"/>
+                                <color key="backgroundColor" red="0.3159137964" green="0.5894933939" blue="0.99220556019999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="VTx-1b-bui"/>
+                                    <constraint firstAttribute="height" constant="60" id="jCV-gu-R5y"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="ラジオへの愛を誓う"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JBb-4M-Fae"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -397,6 +438,7 @@
                             <constraint firstItem="x2v-q9-dyx" firstAttribute="leading" secondItem="P0J-io-iC5" secondAttribute="trailing" constant="32" id="Q6g-EA-rk9"/>
                             <constraint firstItem="6tv-tH-MRh" firstAttribute="leading" secondItem="JBb-4M-Fae" secondAttribute="leading" constant="32" id="QD4-qI-xgp"/>
                             <constraint firstItem="JBb-4M-Fae" firstAttribute="trailing" secondItem="x2v-q9-dyx" secondAttribute="trailing" constant="32" id="RMW-Y8-hE0"/>
+                            <constraint firstItem="xkI-2D-6Vp" firstAttribute="centerX" secondItem="cri-DU-uhL" secondAttribute="centerX" id="XlA-Oa-bou"/>
                             <constraint firstItem="yg8-3J-Phk" firstAttribute="leading" secondItem="JBb-4M-Fae" secondAttribute="leading" constant="32" id="ZSA-zv-7fZ"/>
                             <constraint firstItem="JBb-4M-Fae" firstAttribute="trailing" secondItem="iWI-Cr-fKL" secondAttribute="trailing" constant="32" id="aTT-Ex-7ph"/>
                             <constraint firstItem="ECZ-hx-7iC" firstAttribute="leading" secondItem="JBb-4M-Fae" secondAttribute="leading" constant="32" id="ds8-Sa-clB"/>
@@ -411,6 +453,7 @@
                             <constraint firstItem="9lk-FZ-WsP" firstAttribute="top" secondItem="Nhy-ay-9jv" secondAttribute="bottom" constant="32" id="qQJ-wR-shS"/>
                             <constraint firstItem="Nhy-ay-9jv" firstAttribute="leading" secondItem="JBb-4M-Fae" secondAttribute="leading" constant="32" id="tqb-Sq-BfM"/>
                             <constraint firstItem="bSC-7r-KP6" firstAttribute="top" secondItem="JBb-4M-Fae" secondAttribute="top" constant="32" id="twH-U7-dYi"/>
+                            <constraint firstItem="JBb-4M-Fae" firstAttribute="bottom" secondItem="xkI-2D-6Vp" secondAttribute="bottom" constant="64" id="wJO-PA-28d"/>
                             <constraint firstItem="Nhy-ay-9jv" firstAttribute="top" secondItem="P0J-io-iC5" secondAttribute="bottom" constant="64" id="y1N-yD-Z3c"/>
                             <constraint firstItem="bSC-7r-KP6" firstAttribute="leading" secondItem="JBb-4M-Fae" secondAttribute="leading" constant="32" id="y2r-4i-Y63"/>
                             <constraint firstItem="yg8-3J-Phk" firstAttribute="top" secondItem="iWI-Cr-fKL" secondAttribute="bottom" constant="32" id="yDL-sU-MRl"/>
@@ -418,15 +461,19 @@
                     </view>
                     <connections>
                         <outlet property="jenderField" destination="x2v-q9-dyx" id="fL9-f9-5Tc"/>
+                        <outlet property="saveButton" destination="xkI-2D-6Vp" id="gut-WP-cC7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9f8-PY-f84" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-199" y="-656"/>
+            <point key="canvasLocation" x="-178" y="-632"/>
         </scene>
     </scenes>
     <resources>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

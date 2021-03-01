@@ -13,9 +13,14 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet var makeMailButton: UIButton!
     
+    let saveData: UserDefaults = UserDefaults.standard
+    var radio_array: [RadioClass] = []
+    var key_array: [String] = []
+    let id = UUID()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        table.register(UINib(nibName: "CustomCellTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomCell")
+        table.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomCell")
         makeMailButton.layer.cornerRadius = 32
         table.dataSource = self
         table.delegate = self
@@ -26,18 +31,21 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return radio_array.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell") as? CustomCellTableViewCell {
             return cell
-            }
-            return UITableViewCell()
+        }
+        return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
     }
     
     @IBAction func addRadioInfo() {

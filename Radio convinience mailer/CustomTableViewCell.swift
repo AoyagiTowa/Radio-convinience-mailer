@@ -1,14 +1,14 @@
 //
-//  CustomCellTableViewCell.swift
+//  CustomTableViewCell.swift
 //  Radio convinience mailer
 //
-//  Created by Towa Aoyagi on 2021/02/28.
+//  Created by Towa Aoyagi on 2021/03/01.
 //
 
 import UIKit
 
-class CustomCellTableViewCell: UITableViewCell {
-    
+class CustomTableViewCell: UITableViewCell {
+
     @IBOutlet var radioNameLabel: UILabel!
     @IBOutlet var radioAdressLabel: UILabel!
     @IBOutlet var radioStartTimeLabel: UILabel!
