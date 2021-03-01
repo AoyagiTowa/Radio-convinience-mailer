@@ -416,6 +416,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xkI-2D-6Vp">
+                                <rect key="frame" x="107" y="738" width="200" height="60"/>
+                                <color key="backgroundColor" red="0.3159137964" green="0.5894933939" blue="0.99220556019999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="VTx-1b-bui"/>
+                                    <constraint firstAttribute="height" constant="60" id="jCV-gu-R5y"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="ラジオへの愛を誓う"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JBb-4M-Fae"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -428,6 +438,7 @@
                             <constraint firstItem="x2v-q9-dyx" firstAttribute="leading" secondItem="P0J-io-iC5" secondAttribute="trailing" constant="32" id="Q6g-EA-rk9"/>
                             <constraint firstItem="6tv-tH-MRh" firstAttribute="leading" secondItem="JBb-4M-Fae" secondAttribute="leading" constant="32" id="QD4-qI-xgp"/>
                             <constraint firstItem="JBb-4M-Fae" firstAttribute="trailing" secondItem="x2v-q9-dyx" secondAttribute="trailing" constant="32" id="RMW-Y8-hE0"/>
+                            <constraint firstItem="xkI-2D-6Vp" firstAttribute="centerX" secondItem="cri-DU-uhL" secondAttribute="centerX" id="XlA-Oa-bou"/>
                             <constraint firstItem="yg8-3J-Phk" firstAttribute="leading" secondItem="JBb-4M-Fae" secondAttribute="leading" constant="32" id="ZSA-zv-7fZ"/>
                             <constraint firstItem="JBb-4M-Fae" firstAttribute="trailing" secondItem="iWI-Cr-fKL" secondAttribute="trailing" constant="32" id="aTT-Ex-7ph"/>
                             <constraint firstItem="ECZ-hx-7iC" firstAttribute="leading" secondItem="JBb-4M-Fae" secondAttribute="leading" constant="32" id="ds8-Sa-clB"/>
@@ -442,6 +453,7 @@
                             <constraint firstItem="9lk-FZ-WsP" firstAttribute="top" secondItem="Nhy-ay-9jv" secondAttribute="bottom" constant="32" id="qQJ-wR-shS"/>
                             <constraint firstItem="Nhy-ay-9jv" firstAttribute="leading" secondItem="JBb-4M-Fae" secondAttribute="leading" constant="32" id="tqb-Sq-BfM"/>
                             <constraint firstItem="bSC-7r-KP6" firstAttribute="top" secondItem="JBb-4M-Fae" secondAttribute="top" constant="32" id="twH-U7-dYi"/>
+                            <constraint firstItem="JBb-4M-Fae" firstAttribute="bottom" secondItem="xkI-2D-6Vp" secondAttribute="bottom" constant="64" id="wJO-PA-28d"/>
                             <constraint firstItem="Nhy-ay-9jv" firstAttribute="top" secondItem="P0J-io-iC5" secondAttribute="bottom" constant="64" id="y1N-yD-Z3c"/>
                             <constraint firstItem="bSC-7r-KP6" firstAttribute="leading" secondItem="JBb-4M-Fae" secondAttribute="leading" constant="32" id="y2r-4i-Y63"/>
                             <constraint firstItem="yg8-3J-Phk" firstAttribute="top" secondItem="iWI-Cr-fKL" secondAttribute="bottom" constant="32" id="yDL-sU-MRl"/>
@@ -449,6 +461,7 @@
                     </view>
                     <connections>
                         <outlet property="jenderField" destination="x2v-q9-dyx" id="fL9-f9-5Tc"/>
+                        <outlet property="saveButton" destination="xkI-2D-6Vp" id="gut-WP-cC7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9f8-PY-f84" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

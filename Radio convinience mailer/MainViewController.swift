@@ -16,10 +16,11 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     let saveData: UserDefaults = UserDefaults.standard
     var radio_array: [RadioClass] = []
     var key_array: [String] = []
+    let id = UUID()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        table.register(UINib(nibName: "CustomCellTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomCell")
+        table.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomCell")
         makeMailButton.layer.cornerRadius = 32
         table.dataSource = self
         table.delegate = self
@@ -40,7 +41,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell") as? CustomCellTableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell") as? CustomTableViewCell {
             cell.Viewroad(name: radio_array[indexPath.row].radioName,address: radio_array[indexPath.row].radioAddress,startTime: radio_array[indexPath.row].radioStart,finishTime: radio_array[indexPath.row].radioStop,isOn: radio_array[indexPath.row].radioDays)
             return cell
         }

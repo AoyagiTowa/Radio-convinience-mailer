@@ -11,6 +11,7 @@ class AddUserViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     
     @IBOutlet var jenderField: UITextField!
+    @IBOutlet var saveButton: UIButton!
     var pickerView: UIPickerView = UIPickerView()
     
     let jenderList = ["男性","女性","非公開"]
@@ -24,6 +25,8 @@ class AddUserViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         
         let toolbar = UIToolbar(frame: CGRectMake(0, 0, 0, 35))
         _ = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(AddUserViewController.done))
+        saveButton.layer.cornerRadius = 16
+
         
         self.jenderField.inputView = pickerView
         self.jenderField.inputAccessoryView = toolbar
