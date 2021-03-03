@@ -25,6 +25,8 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate,UIPi
         sendMail()
         pickerView.delegate = self
         pickerView.dataSource = self
+        contentField.layer.borderWidth = 0.5
+        contentField.layer.borderColor = UIColor.lightGray.cgColor
         self.senderAdressField.inputView = pickerView
         // Do any additional setup after loading the view.
     }

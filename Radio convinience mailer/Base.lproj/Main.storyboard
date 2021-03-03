@@ -24,7 +24,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XHS-Es-F3A">
-                                <rect key="frame" x="83" y="205" width="299" height="34"/>
+                                <rect key="frame" x="99" y="205" width="283" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -65,7 +65,7 @@
                             <constraint firstItem="lAV-av-sTf" firstAttribute="top" secondItem="nGh-uK-oef" secondAttribute="bottom" constant="54" id="X6E-B3-QNb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Flx-dS-5cB" secondAttribute="trailing" constant="32" id="ap0-hy-f6s"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XHS-Es-F3A" secondAttribute="trailing" constant="32" id="d6w-WO-oBa"/>
-                            <constraint firstItem="XHS-Es-F3A" firstAttribute="leading" secondItem="nGh-uK-oef" secondAttribute="trailing" constant="16" id="hFN-Vf-lfs"/>
+                            <constraint firstItem="XHS-Es-F3A" firstAttribute="leading" secondItem="nGh-uK-oef" secondAttribute="trailing" constant="32" id="hFN-Vf-lfs"/>
                             <constraint firstItem="lAV-av-sTf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="hZO-am-37m"/>
                             <constraint firstItem="csP-KW-Pgf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="iIK-ks-iUE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="csP-KW-Pgf" secondAttribute="trailing" constant="32" id="ifL-H1-wWs"/>
@@ -102,8 +102,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="アドレスを記入してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="haG-BA-r2x">
-                                <rect key="frame" x="32" y="187.5" width="350" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="アドレスを記入してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="haG-BA-r2x">
+                                <rect key="frame" x="32" y="218" width="350" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="S1Q-54-XSj"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -206,36 +209,54 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ラジオ番組名を入力してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="omN-8h-e0d">
-                                <rect key="frame" x="32" y="121.5" width="350" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ラジオ番組名を入力してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="omN-8h-e0d">
+                                <rect key="frame" x="32" y="149.5" width="350" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="tHD-rS-bHk"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="番組名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLk-vy-ywo">
+                                <rect key="frame" x="32" y="120" width="55.5" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="メールアドレス" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D80-rb-TP9">
+                                <rect key="frame" x="32" y="189.5" width="121.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eKd-ky-RPf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="aLk-vy-ywo" firstAttribute="leading" secondItem="eKd-ky-RPf" secondAttribute="leading" constant="32" id="1gr-V8-Sdz"/>
+                            <constraint firstItem="D80-rb-TP9" firstAttribute="top" secondItem="omN-8h-e0d" secondAttribute="bottom" constant="8" id="4BV-aY-DCg"/>
                             <constraint firstItem="X0g-gi-ppc" firstAttribute="top" secondItem="ltd-xV-Rwz" secondAttribute="bottom" constant="24" id="4az-ay-AIk"/>
                             <constraint firstItem="eKd-ky-RPf" firstAttribute="trailing" secondItem="smL-3R-wfz" secondAttribute="trailing" constant="8" id="7AW-Ah-GBV"/>
                             <constraint firstItem="1DY-k8-35v" firstAttribute="leading" secondItem="eKd-ky-RPf" secondAttribute="leading" constant="8" id="7n2-SD-KOv"/>
                             <constraint firstItem="LHd-OD-dIy" firstAttribute="centerX" secondItem="d5r-OS-n6I" secondAttribute="centerX" id="9Fv-rM-shS"/>
                             <constraint firstItem="ltd-xV-Rwz" firstAttribute="centerX" secondItem="d5r-OS-n6I" secondAttribute="centerX" id="D26-EM-PQt"/>
+                            <constraint firstItem="omN-8h-e0d" firstAttribute="top" secondItem="aLk-vy-ywo" secondAttribute="bottom" constant="8" id="Dlt-Ln-F6g"/>
                             <constraint firstItem="eKd-ky-RPf" firstAttribute="trailing" secondItem="1DY-k8-35v" secondAttribute="trailing" constant="8" id="GRJ-a8-Gdk"/>
                             <constraint firstItem="eKd-ky-RPf" firstAttribute="bottom" secondItem="z6l-6w-eWQ" secondAttribute="bottom" constant="16" id="Hpk-Hv-yoT"/>
                             <constraint firstItem="ltd-xV-Rwz" firstAttribute="top" secondItem="LHd-OD-dIy" secondAttribute="bottom" constant="16" id="KWU-nr-i8L"/>
                             <constraint firstItem="haG-BA-r2x" firstAttribute="leading" secondItem="eKd-ky-RPf" secondAttribute="leading" constant="32" id="KxC-Bi-pwA"/>
                             <constraint firstItem="eKd-ky-RPf" firstAttribute="trailing" secondItem="haG-BA-r2x" secondAttribute="trailing" constant="32" id="L53-vJ-aJF"/>
+                            <constraint firstItem="haG-BA-r2x" firstAttribute="top" secondItem="D80-rb-TP9" secondAttribute="bottom" constant="8" id="PCt-nC-Oyj"/>
                             <constraint firstItem="omN-8h-e0d" firstAttribute="leading" secondItem="eKd-ky-RPf" secondAttribute="leading" constant="32" id="Uwc-GE-LLK"/>
                             <constraint firstItem="X0g-gi-ppc" firstAttribute="centerX" secondItem="d5r-OS-n6I" secondAttribute="centerX" id="VFi-sA-E8E"/>
                             <constraint firstItem="z6l-6w-eWQ" firstAttribute="top" secondItem="X0g-gi-ppc" secondAttribute="bottom" constant="16" id="VGq-ek-w0m"/>
                             <constraint firstItem="1DY-k8-35v" firstAttribute="top" secondItem="smL-3R-wfz" secondAttribute="bottom" constant="16" id="WUC-Ji-ueO"/>
+                            <constraint firstItem="aLk-vy-ywo" firstAttribute="top" secondItem="eKd-ky-RPf" secondAttribute="top" constant="32" id="XfJ-fW-A1Y"/>
                             <constraint firstItem="eKd-ky-RPf" firstAttribute="trailing" secondItem="omN-8h-e0d" secondAttribute="trailing" constant="32" id="aJ8-VW-u4z"/>
                             <constraint firstItem="z6l-6w-eWQ" firstAttribute="centerX" secondItem="d5r-OS-n6I" secondAttribute="centerX" id="b0m-za-fx3"/>
                             <constraint firstItem="LHd-OD-dIy" firstAttribute="top" secondItem="1DY-k8-35v" secondAttribute="bottom" constant="48" id="eQW-8F-Odx"/>
-                            <constraint firstItem="omN-8h-e0d" firstAttribute="top" secondItem="eKd-ky-RPf" secondAttribute="top" constant="64" id="l0I-Gj-hYE"/>
-                            <constraint firstItem="smL-3R-wfz" firstAttribute="top" secondItem="haG-BA-r2x" secondAttribute="bottom" constant="64" id="l4D-cC-5p2"/>
+                            <constraint firstItem="D80-rb-TP9" firstAttribute="leading" secondItem="eKd-ky-RPf" secondAttribute="leading" constant="32" id="gdK-KC-eN9"/>
                             <constraint firstItem="smL-3R-wfz" firstAttribute="leading" secondItem="eKd-ky-RPf" secondAttribute="leading" constant="8" id="oXG-8f-CHq"/>
-                            <constraint firstItem="haG-BA-r2x" firstAttribute="top" secondItem="omN-8h-e0d" secondAttribute="bottom" constant="32" id="tdG-8j-hvT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="BDx-A8-iNT">
@@ -263,7 +284,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k6m-pW-BCn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-978" y="-632"/>
+            <point key="canvasLocation" x="-978.26086956521749" y="-632.14285714285711"/>
         </scene>
         <!--About Radio View Controller-->
         <scene sceneID="Jg7-ht-OGh">

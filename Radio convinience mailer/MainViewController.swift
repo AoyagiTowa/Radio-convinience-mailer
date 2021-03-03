@@ -25,9 +25,9 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         table.dataSource = self
         table.delegate = self
         //ここに何もない時も許容できるようにする
-        //key_array = (saveData.object(forKey: "key") as! [String]) ?? []
+//        key_array = (saveData.object(forKey: "key") as! [String]) ?? []
 //        for i in key_array {
-//            let radio_value: RadioClass = saveData.object(forKey: i) as! RadioClass
+//            let radio_value: RadioClass = saveData.object(forKey: <#T##String#>)(forKey: i) as! RadioClass
 //            radio_array.append(radio_value)
 //        }
         
@@ -37,7 +37,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return radio_array.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -50,6 +50,10 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
 
     
