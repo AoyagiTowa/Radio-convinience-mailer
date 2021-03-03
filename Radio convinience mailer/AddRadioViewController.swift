@@ -49,12 +49,25 @@ class AddRadioViewController: UIViewController {
         }
         weekdaysBool = [mondaySwitch.isOn,tuesdaySwitch.isOn,wednesdaySwitch.isOn,tursdaySwitch.isOn,fridaySwitch.isOn,saturdaySwitch.isOn,sundaySwitch.isOn]
         
-        radioClass = RadioClass.init(uuid: uuid, radioName: radioNameField.text!, radioAddress: radioAdressField.text!, radioDays: weekdaysBool, radioStart: startTimePicker.date, radioStop: finishTimePIcker.date)
+        radioClass = RadioClass.init(radioName: radioNameField.text!, radioAddress: radioAdressField.text!, radioDays: weekdaysBool, radioStart: startTimePicker.date, radioStop: finishTimePIcker.date)
         
         //ここが上手くかない、多分UUIDが変
-        saveData.set(radioClass, forKey: radioClass.uuid.uuidString)
-        saveData.set(radioClass.uuid.uuidString, forKey: "key")
+        let data = try? JSONEncoder().encode(radioClass)
+        saveData.set(data, forKey: "\(radioClass.uuid)")
+        saveData.set("\(radioClass.uuid)", forKey: "key")
+        
+        let required_key: [String] = saveData.data(forKey: "key") as! [String]
+        for i in required_key {
+            guard let get_data = saveData.data(forKey: i) else {
+                return
+            }
+            let radio = try? JSONDecoder().decode(RadioClass.self, from: get_data)
+            print(radio?.radioName)
+        }
+        
     }
+}
+    
     
     /*
      // MARK: - Navigation
@@ -65,5 +78,4 @@ class AddRadioViewController: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
-    
-}
+
