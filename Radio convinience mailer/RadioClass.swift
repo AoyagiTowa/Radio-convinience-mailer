@@ -6,21 +6,15 @@
 //
 
 import UIKit
+import RealmSwift
 
-class RadioClass {
-    let uuid: UUID
-    var radioName: String
-    var radioAddress: String
-    var radioDays: Array<Bool> = Array(repeating: false, count: 7)
-    var radioStart: Date
-    var radioStop: Date
+class RadioClass: Object{
+    let uuid: UUID = UUID()
+    @objc dynamic var radioName: String? = nil
+    @objc dynamic var radioAddress: String? = nil
+    @objc dynamic var radioDays: [Bool] = []
+    @objc dynamic var radioStart: Date? = nil
+    @objc dynamic var radioStop: Date? = nil
     
-    init(uuid: UUID = UUID(),radioName: String,radioAddress: String,radioDays: [Bool], radioStart: Date,radioStop: Date) {
-        self.uuid = uuid
-        self.radioName = radioName
-        self.radioAddress = radioAddress
-        self.radioDays = radioDays
-        self.radioStart = radioStart
-        self.radioStop = radioStop
-    }
+    
 }

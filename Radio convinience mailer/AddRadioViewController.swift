@@ -21,10 +21,8 @@ class AddRadioViewController: UIViewController {
     @IBOutlet var sundaySwitch: UISwitch!
     @IBOutlet var startTimePicker: UIDatePicker!
     @IBOutlet var finishTimePIcker: UIDatePicker!
-    var radioClass: RadioClass!
-    var weekdaysBool:Array<Bool> = Array(repeating: false, count: 7)
+    var weekdaysBool:[Bool]!
     let saveData: UserDefaults = UserDefaults.standard
-    let uuid = UUID()
     
     
     override func viewDidLoad() {
@@ -42,6 +40,9 @@ class AddRadioViewController: UIViewController {
     }
     
     @IBAction func save() {
+        
+        let realm = try! Realm()
+
         if radioNameField == nil {
             return
         }
@@ -50,11 +51,18 @@ class AddRadioViewController: UIViewController {
         }
         weekdaysBool = [mondaySwitch.isOn,tuesdaySwitch.isOn,wednesdaySwitch.isOn,tursdaySwitch.isOn,fridaySwitch.isOn,saturdaySwitch.isOn,sundaySwitch.isOn]
         
-        radioClass = RadioClass.init(radioName: radioNameField.text!, radioAddress: radioAdressField.text!, radioDays: weekdaysBool, radioStart: startTimePicker.date, radioStop: finishTimePIcker.date)
-        
+        let radioClass = RadioClass()
+        radioClass.radioName = radioNameField.text!
+        radioClass.radioAddress = radioAdressField.text!
+        radioClass.radioDays = weekdaysBool
+        radioClass.radioStart = startTimePicker.date
+        radioClass.radioStop = finishTimePIcker.date
+    
         //ここが上手くかない、多分UUIDが変
-        saveData.set(radioClass, forKey: "\(radioClass.uuid)")
-        saveData.set("\(radioClass.uuid)", forKey: "key")
+        try! realm.write{
+            realm.add(radioClass)
+        }
+        
         
     }
     
