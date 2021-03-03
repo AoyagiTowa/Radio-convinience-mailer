@@ -53,17 +53,17 @@ class AddRadioViewController: UIViewController {
         
         //ここが上手くかない、多分UUIDが変
         let data = try? JSONEncoder().encode(radioClass)
-        saveData.set(data, forKey: "\(radioClass.uuid)")
-        saveData.set("\(radioClass.uuid)", forKey: "key")
+        saveData.set(data, forKey: "bananamoon")
+        //saveData.set("bananamoon", forKey: "key")
         
-        let required_key: [String] = saveData.data(forKey: "key") as! [String]
-        for i in required_key {
-            guard let get_data = saveData.data(forKey: i) else {
+        //let required_key: String = saveData.data(forKey: "key") as? String
+        //for i in required_key {
+            guard let get_data = saveData.data(forKey: "bananamoon") else {
                 return
             }
             let radio = try? JSONDecoder().decode(RadioClass.self, from: get_data)
             print(radio?.radioName)
-        }
+        //}
         
     }
 }
