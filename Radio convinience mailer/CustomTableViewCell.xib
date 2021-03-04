@@ -100,7 +100,8 @@
                         </subviews>
                     </stackView>
                 </subviews>
-                <color key="backgroundColor" red="0.60254323480000005" green="0.78528147940000004" blue="0.95572704080000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <color key="backgroundColor" red="0.99995225669999999" green="0.83124786620000002" blue="0.93178117279999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <color key="tintColor" red="0.99995225669999999" green="0.83124786620000002" blue="0.93178117279999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="sUq-HJ-Dc9" firstAttribute="top" secondItem="jaS-UF-wOR" secondAttribute="bottom" constant="16" id="JlB-ta-Ybu"/>
                     <constraint firstItem="sUq-HJ-Dc9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Pc1-Zd-2CK"/>
@@ -113,6 +114,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" red="0.41366198659999998" green="0.59256052969999995" blue="0.75688773389999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <connections>
                 <outlet property="fridayLabel" destination="mPH-HF-5bo" id="nHd-zO-Aap"/>
                 <outlet property="mondayLabel" destination="OCK-9r-LDB" id="tgH-2E-aSF"/>
