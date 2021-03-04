@@ -7,23 +7,60 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
-
+class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+    
+    @IBOutlet weak var table: UITableView!
+    
+    @IBOutlet var makeMailButton: UIButton!
+    
+    let saveData: UserDefaults = UserDefaults.standard
+    var radio_array: [RadioClass] = []
+    var key_array: [String] = []
+    let id = UUID()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        table.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomCell")
+        makeMailButton.layer.cornerRadius = 32
+        table.dataSource = self
+        table.delegate = self
+        table.rowHeight = 120
+        
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell") as? CustomTableViewCell {
+            return cell
+        }
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
+    }
+    
+    @IBAction func addRadioInfo() {
+    }
+    
+    @IBAction func makeMail() {
+    }
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
