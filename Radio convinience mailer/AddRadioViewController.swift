@@ -60,10 +60,6 @@ class AddRadioViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
         saveRadio(radio: radioClass)
         
-        //let required_key: String = saveData.data(forKey: "key") as? String
-        //for i in required_key {
-        
-        //}
     }
     func saveRadio(radio: RadioClass) {
         let data = try? JSONEncoder().encode(radio)
