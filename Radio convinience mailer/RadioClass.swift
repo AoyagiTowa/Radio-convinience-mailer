@@ -8,13 +8,15 @@
 import UIKit
 
 class RadioClass {
+    var uuid = UUID()
     var radioName: String
     var radioAddress: String
     var radioDays: Array<Bool> = Array(repeating: false, count: 7)
     var radioStart: Date
     var radioStop: Date
     
-    init(radioName: String,radioAddress: String,radioDays: [Bool], radioStart: Date,radioStop: Date) {
+    init(uuid: UUID,radioName: String,radioAddress: String,radioDays: [Bool], radioStart: Date,radioStop: Date) {
+        self.uuid = uuid
         self.radioName = radioName
         self.radioAddress = radioAddress
         self.radioDays = radioDays
