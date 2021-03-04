@@ -22,20 +22,35 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         table.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomCell")
         makeMailButton.layer.cornerRadius = 32
+
+        
+        if saveData.object(forKey: "key") as? [String] != nil {
+            key_array = saveData.object(forKey: "key") as! [String]
+        }
+        print(key_array)
+        for i in key_array {
+            guard let get_data = saveData.data(forKey: i) else {
+                return
+            }
+            let radio: RadioClass = try! JSONDecoder().decode(RadioClass.self, from: get_data)
+            radio_array.append(radio)
+        }
         table.dataSource = self
         table.delegate = self
-        table.rowHeight = 120
+        table.rowHeight = 100
+        
         
         // Do any additional setup after loading the view.
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return radio_array.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell") as? CustomTableViewCell {
+            cell.viewRoad(name: radio_array[indexPath.row].radioName, address: radio_array[indexPath.row].radioAddress, startTime: radio_array[indexPath.row].radioStart, finishTime: radio_array[indexPath.row].radioStop, isOn: radio_array[indexPath.row].radioDays)
             return cell
         }
         return UITableViewCell()
@@ -44,9 +59,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
-    }
+    
     
     @IBAction func addRadioInfo() {
     }

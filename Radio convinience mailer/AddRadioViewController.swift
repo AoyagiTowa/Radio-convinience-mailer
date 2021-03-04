@@ -40,6 +40,9 @@ class AddRadioViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func retuen() {
+        self.navigationController?.popViewController(animated: true)
+    }
     @IBAction func save() {
         if radioNameField == nil {
             return
@@ -52,30 +55,31 @@ class AddRadioViewController: UIViewController {
         radioClass = RadioClass.init(radioName: radioNameField.text!, radioAddress: radioAdressField.text!, radioDays: weekdaysBool, radioStart: startTimePicker.date, radioStop: finishTimePIcker.date)
         
         //ここが上手くかない、多分UUIDが変
-        let data = try? JSONEncoder().encode(radioClass)
-        saveData.set(data, forKey: "bananamoon")
+        
         //saveData.set("bananamoon", forKey: "key")
+        self.navigationController?.popViewController(animated: true)
+        saveRadio(radio: radioClass)
         
         //let required_key: String = saveData.data(forKey: "key") as? String
         //for i in required_key {
-            guard let get_data = saveData.data(forKey: "bananamoon") else {
-                return
-            }
-            let radio = try? JSONDecoder().decode(RadioClass.self, from: get_data)
-            print(radio?.radioName)
-        //}
         
+        //}
+    }
+    func saveRadio(radio: RadioClass) {
+        let data = try? JSONEncoder().encode(radio)
+        saveData.set(data, forKey: radio.radioName)
+        saveData.set(radio.radioName, forKey: "key")
     }
 }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+
+
+/*
+ // MARK: - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+ // Get the new view controller using segue.destination.
+ // Pass the selected object to the new view controller.
+ }
+ */
 
