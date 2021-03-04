@@ -21,6 +21,7 @@ class AddRadioViewController: UIViewController {
     @IBOutlet var startTimePicker: UIDatePicker!
     @IBOutlet var finishTimePIcker: UIDatePicker!
     var radioClass: RadioClass!
+    var key_array: [String]!
     var weekdaysBool:Array<Bool> = Array(repeating: false, count: 7)
     let saveData: UserDefaults = UserDefaults.standard
     let uuid = UUID()
@@ -37,6 +38,7 @@ class AddRadioViewController: UIViewController {
         finishTimePIcker.datePickerMode = .time
         finishTimePIcker.locale = Locale(identifier: "ja_JP")
         
+        
         // Do any additional setup after loading the view.
     }
     
@@ -44,27 +46,46 @@ class AddRadioViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func save() {
-        if radioNameField == nil {
+        if radioNameField == nil ||
+            radioAdressField == nil{
             return
+        }else {
+        if saveData.object(forKey: "key") as? [String] != nil {
+            key_array = saveData.object(forKey: "key") as? [String]
         }
-        if radioAdressField == nil {
-            return
-        }
+    
         weekdaysBool = [mondaySwitch.isOn,tuesdaySwitch.isOn,wednesdaySwitch.isOn,tursdaySwitch.isOn,fridaySwitch.isOn,saturdaySwitch.isOn,sundaySwitch.isOn]
         
         radioClass = RadioClass.init(radioName: radioNameField.text!, radioAddress: radioAdressField.text!, radioDays: weekdaysBool, radioStart: startTimePicker.date, radioStop: finishTimePIcker.date)
-        
-        //ここが上手くかない、多分UUIDが変
-        
+                
+        for i in key_array {
+            if i == radioNameField.text! {
+                return
+            }
+            //ここでkey_arrayにappendできていない。radioNameField.textは出力できる。
+            key_array.append(radioNameField.text!)
+        }
+        saveRadio(radio: radioClass, key_array: key_array)
         //saveData.set("bananamoon", forKey: "key")
         self.navigationController?.popViewController(animated: true)
-        saveRadio(radio: radioClass)
+        }
         
+        
+        //以下はテスト処理。このクラス内ではencodeもdecodeも上手くいった。
+        let test = try? JSONEncoder().encode(radioClass)
+        saveData.set(test, forKey: "test")
+        guard let get_data = saveData.data(forKey: "test") else {
+            return
+        }
+        let test_radio: RadioClass = try! JSONDecoder().decode(RadioClass.self, from: get_data)
+        print(test_radio.radioName)
     }
-    func saveRadio(radio: RadioClass) {
+    
+    
+    func saveRadio(radio: RadioClass, key_array: [String]) {
         let data = try? JSONEncoder().encode(radio)
         saveData.set(data, forKey: radio.radioName)
-        saveData.set(radio.radioName, forKey: "key")
+        saveData.set(key_array, forKey: "key")
     }
 }
 
