@@ -50,24 +50,27 @@ class AddRadioViewController: UIViewController {
             radioAdressField == nil{
             return
         }else {
-        if saveData.object(forKey: "key") as? [String] != nil {
-            key_array = saveData.object(forKey: "key") as? [String]
-        }
-    
-        weekdaysBool = [mondaySwitch.isOn,tuesdaySwitch.isOn,wednesdaySwitch.isOn,tursdaySwitch.isOn,fridaySwitch.isOn,saturdaySwitch.isOn,sundaySwitch.isOn]
-        
-        radioClass = RadioClass.init(radioName: radioNameField.text!, radioAddress: radioAdressField.text!, radioDays: weekdaysBool, radioStart: startTimePicker.date, radioStop: finishTimePIcker.date)
-                
-        for i in key_array {
-            if i == radioNameField.text! {
-                return
+            //各cellの情報を呼び出す為の鍵を格納しているString型の配列を呼び出す処理
+            if saveData.object(forKey: "key") as? [String] != nil {
+                key_array = saveData.object(forKey: "key") as? [String]
             }
-            //ここでkey_arrayにappendできていない。radioNameField.textは出力できる。
-            key_array.append(radioNameField.text!)
-        }
-        saveRadio(radio: radioClass, key_array: key_array)
-        //saveData.set("bananamoon", forKey: "key")
-        self.navigationController?.popViewController(animated: true)
+            
+            weekdaysBool = [mondaySwitch.isOn,tuesdaySwitch.isOn,wednesdaySwitch.isOn,tursdaySwitch.isOn,fridaySwitch.isOn,saturdaySwitch.isOn,sundaySwitch.isOn]
+            
+            //オリジナルクラスのRadioClassのインスタンスに、それぞれ値を代入する
+            radioClass = RadioClass.init(radioName: radioNameField.text!, radioAddress: radioAdressField.text!, radioDays: weekdaysBool, radioStart: startTimePicker.date, radioStop: finishTimePIcker.date)
+            
+            for i in key_array {
+                if i == radioNameField.text! {
+                    return
+                }
+                //ここでkey_arrayにappendできていない。radioNameField.textは出力できる。
+                key_array.append(radioNameField.text!)
+            }
+            //encodeの処理部分のメソッド呼び出し
+            saveRadio(radio: radioClass, key_array: key_array)
+            //saveData.set("bananamoon", forKey: "key")
+            self.navigationController?.popViewController(animated: true)
         }
         
         
@@ -82,6 +85,7 @@ class AddRadioViewController: UIViewController {
     }
     
     
+    //ここのメソッドで処理。encodeしたオリジナルクラスをとりあえずテストとして、番組名を鍵に保存し、鍵の番組名の配列をkeyという鍵で保存する。
     func saveRadio(radio: RadioClass, key_array: [String]) {
         let data = try? JSONEncoder().encode(radio)
         saveData.set(data, forKey: radio.radioName)
