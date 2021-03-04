@@ -20,7 +20,7 @@
                                 <rect key="frame" x="32" y="205" width="35" height="34"/>
                                 <color key="tintColor" red="0.066666666669999999" green="0.066666666669999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.99995225669999999" green="0.83124786620000002" blue="0.93178117279999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XHS-Es-F3A">
@@ -31,13 +31,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本文" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAV-av-sTf">
                                 <rect key="frame" x="32" y="293" width="35" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.99995225669999999" green="0.83124786620000002" blue="0.93178117279999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="宛先" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5K-qE-h1u">
                                 <rect key="frame" x="32" y="152" width="35" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.99995225669999999" green="0.83124786620000002" blue="0.93178117279999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="↓" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Flx-dS-5cB">
@@ -54,7 +54,7 @@
                             </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.41366198659999998" green="0.59256052969999995" blue="0.75688773389999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="z5K-qE-h1u" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="6eA-E2-FA9"/>
                             <constraint firstItem="csP-KW-Pgf" firstAttribute="top" secondItem="lAV-av-sTf" secondAttribute="bottom" constant="8" id="CBe-uo-5BF"/>
@@ -213,7 +213,7 @@
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eKd-ky-RPf"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.36237582559999998" green="0.59893417360000001" blue="0.77801340819999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="X0g-gi-ppc" firstAttribute="top" secondItem="ltd-xV-Rwz" secondAttribute="bottom" constant="24" id="4az-ay-AIk"/>
                             <constraint firstItem="eKd-ky-RPf" firstAttribute="trailing" secondItem="smL-3R-wfz" secondAttribute="trailing" constant="8" id="7AW-Ah-GBV"/>
@@ -428,7 +428,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JBb-4M-Fae"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.41366198659999998" green="0.59256052969999995" blue="0.75688773389999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="P0J-io-iC5" firstAttribute="top" secondItem="ECZ-hx-7iC" secondAttribute="bottom" constant="64" id="9AN-fg-4cV"/>
                             <constraint firstItem="JBb-4M-Fae" firstAttribute="trailing" secondItem="9lk-FZ-WsP" secondAttribute="trailing" constant="32" id="Bgx-8Y-x9l"/>
