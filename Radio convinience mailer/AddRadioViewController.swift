@@ -21,7 +21,7 @@ class AddRadioViewController: UIViewController {
     @IBOutlet var startTimePicker: UIDatePicker!
     @IBOutlet var finishTimePIcker: UIDatePicker!
     var radioClass: RadioClass!
-    var key_array: [String]!
+    var key_array: [String] = []
     var weekdaysBool:Array<Bool> = Array(repeating: false, count: 7)
     let saveData: UserDefaults = UserDefaults.standard
     let uuid = UUID()
@@ -52,7 +52,7 @@ class AddRadioViewController: UIViewController {
         }else {
             //各cellの情報を呼び出す為の鍵を格納しているString型の配列を呼び出す処理
             if saveData.object(forKey: "key") as? [String] != nil {
-                key_array = saveData.object(forKey: "key") as? [String]
+                key_array = (saveData.object(forKey: "key") as? [String])!
             }
             
             weekdaysBool = [mondaySwitch.isOn,tuesdaySwitch.isOn,wednesdaySwitch.isOn,tursdaySwitch.isOn,fridaySwitch.isOn,saturdaySwitch.isOn,sundaySwitch.isOn]
@@ -60,13 +60,12 @@ class AddRadioViewController: UIViewController {
             //オリジナルクラスのRadioClassのインスタンスに、それぞれ値を代入する
             radioClass = RadioClass.init(radioName: radioNameField.text!, radioAddress: radioAdressField.text!, radioDays: weekdaysBool, radioStart: startTimePicker.date, radioStop: finishTimePIcker.date)
             
-            for i in key_array {
-                if i == radioNameField.text! {
-                    return
-                }
-                //ここでkey_arrayにappendできていない。radioNameField.textは出力できる。
-                key_array.append(radioNameField.text!)
-            }
+            
+            
+            //ここでkey_arrayにappendできていない。radioNameField.textは出力できる。
+            key_array.append(radioNameField.text!)
+            
+            print(key_array)
             //encodeの処理部分のメソッド呼び出し
             saveRadio(radio: radioClass, key_array: key_array)
             //saveData.set("bananamoon", forKey: "key")
@@ -81,7 +80,6 @@ class AddRadioViewController: UIViewController {
             return
         }
         let test_radio: RadioClass = try! JSONDecoder().decode(RadioClass.self, from: get_data)
-        print(test_radio.radioName)
     }
     
     
