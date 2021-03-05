@@ -21,6 +21,7 @@ class AddRadioViewController: UIViewController {
     @IBOutlet var startTimePicker: UIDatePicker!
     @IBOutlet var finishTimePIcker: UIDatePicker!
     var radioClass: RadioClass!
+    var key_array: [String] = []
     var weekdaysBool:Array<Bool> = Array(repeating: false, count: 7)
     let saveData: UserDefaults = UserDefaults.standard
     let uuid = UUID()
@@ -37,33 +38,67 @@ class AddRadioViewController: UIViewController {
         finishTimePIcker.datePickerMode = .time
         finishTimePIcker.locale = Locale(identifier: "ja_JP")
         
+        
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func retuen() {
+        self.navigationController?.popViewController(animated: true)
+    }
     @IBAction func save() {
-        if radioNameField == nil {
+        if radioNameField == nil ||
+            radioAdressField == nil{
+            return
+        }else {
+            //各cellの情報を呼び出す為の鍵を格納しているString型の配列を呼び出す処理
+            if saveData.object(forKey: "key") as? [String] != nil {
+                key_array = (saveData.object(forKey: "key") as? [String])!
+            }
+            
+            weekdaysBool = [mondaySwitch.isOn,tuesdaySwitch.isOn,wednesdaySwitch.isOn,tursdaySwitch.isOn,fridaySwitch.isOn,saturdaySwitch.isOn,sundaySwitch.isOn]
+            
+            //オリジナルクラスのRadioClassのインスタンスに、それぞれ値を代入する
+            radioClass = RadioClass.init(radioName: radioNameField.text!, radioAddress: radioAdressField.text!, radioDays: weekdaysBool, radioStart: startTimePicker.date, radioStop: finishTimePIcker.date)
+            
+            
+            
+            //ここでkey_arrayにappendできていない。radioNameField.textは出力できる。
+            key_array.append(radioNameField.text!)
+            
+            print(key_array)
+            //encodeの処理部分のメソッド呼び出し
+            saveRadio(radio: radioClass, key_array: key_array)
+            //saveData.set("bananamoon", forKey: "key")
+            self.navigationController?.popViewController(animated: true)
+        }
+        
+        
+        //以下はテスト処理。このクラス内ではencodeもdecodeも上手くいった。
+        let test = try? JSONEncoder().encode(radioClass)
+        saveData.set(test, forKey: "test")
+        guard let get_data = saveData.data(forKey: "test") else {
             return
         }
-        if radioAdressField == nil {
-            return
-        }
-        weekdaysBool = [mondaySwitch.isOn,tuesdaySwitch.isOn,wednesdaySwitch.isOn,tursdaySwitch.isOn,fridaySwitch.isOn,saturdaySwitch.isOn,sundaySwitch.isOn]
-        
-        radioClass = RadioClass.init(uuid: uuid, radioName: radioNameField.text!, radioAddress: radioAdressField.text!, radioDays: weekdaysBool, radioStart: startTimePicker.date, radioStop: finishTimePIcker.date)
-        
-        //ここが上手くかない、多分UUIDが変
-        saveData.set(radioClass, forKey: radioClass.uuid.uuidString)
-        saveData.set(radioClass.uuid.uuidString, forKey: "key")
+        let test_radio: RadioClass = try! JSONDecoder().decode(RadioClass.self, from: get_data)
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
+    //ここのメソッドで処理。encodeしたオリジナルクラスをとりあえずテストとして、番組名を鍵に保存し、鍵の番組名の配列をkeyという鍵で保存する。
+    func saveRadio(radio: RadioClass, key_array: [String]) {
+        let data = try? JSONEncoder().encode(radio)
+        saveData.set(data, forKey: radio.radioName)
+        saveData.set(key_array, forKey: "key")
+    }
 }
+
+
+/*
+ // MARK: - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+ // Get the new view controller using segue.destination.
+ // Pass the selected object to the new view controller.
+ }
+ */
+

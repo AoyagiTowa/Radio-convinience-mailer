@@ -33,7 +33,7 @@ class CustomTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func Viewroad(name: String, address: String, startTime: Date, finishTime: Date, isOn: [Bool]) {
+    func viewRoad(name: String, address: String, startTime: Date, finishTime: Date, isOn: [Bool]) {
         radioNameLabel.text = name
         radioAdressLabel.text = address
         let formatter = DateFormatter()

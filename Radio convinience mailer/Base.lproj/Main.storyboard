@@ -243,7 +243,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="BDx-A8-iNT">
-                        <barButtonItem key="leftBarButtonItem" title="戻る" id="QTd-Vo-mZP"/>
+                        <barButtonItem key="leftBarButtonItem" title="戻る" id="QTd-Vo-mZP">
+                            <connections>
+                                <action selector="retuen" destination="0Il-xt-99k" id="dMQ-WV-xG2"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="保存" id="oHX-pB-dmF">
                             <connections>
                                 <action selector="save" destination="0Il-xt-99k" id="6VL-qr-dM6"/>
@@ -293,7 +297,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="4wV-PO-SK7" kind="relationship" relationship="rootViewController" id="GuA-eW-EmW"/>
+                        <segue destination="4wV-PO-SK7" kind="relationship" relationship="rootViewController" id="rYi-70-yIv"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="039-ky-J3R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
