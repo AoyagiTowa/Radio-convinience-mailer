@@ -27,6 +27,10 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate,UIPi
         pickerView.dataSource = self
         pickerView.showsSelectionIndicator = true
         self.senderAdressField.inputView = pickerView
+        senderAdressField.layer.cornerRadius = 16
+        mainTitleField.layer.cornerRadius = 16
+        contentField.layer.cornerRadius = 16
+
         // Do any additional setup after loading the view.
     }
     

@@ -23,6 +23,7 @@ class CustomTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        contentView.layer.cornerRadius = 32
         // Initialization code
     }
     
@@ -40,25 +41,25 @@ class CustomTableViewCell: UITableViewCell {
         radioStartTimeLabel.text = formatter.string(from: startTime)
         radioStopTimeLabel.text = formatter.string(from: finishTime)
         if isOn[0] == true {
-            mondayLabel.textColor = UIColor.red
+            mondayLabel.textColor = UIColor.purple
         }
         if isOn[1] {
-            tuesdayLabel.textColor = UIColor.red
+            tuesdayLabel.textColor = UIColor.purple
         }
         if isOn[2] {
-            wednesdayLabel.textColor = UIColor.red
+            wednesdayLabel.textColor = UIColor.purple
         }
         if isOn[3] {
-            tursdayLabel.textColor = UIColor.red
+            tursdayLabel.textColor = UIColor.purple
         }
         if isOn[4] {
-            fridayLabel.textColor = UIColor.red
+            fridayLabel.textColor = UIColor.purple
         }
         if isOn[5] {
-            saturdayLabel.textColor = UIColor.red
+            saturdayLabel.textColor = UIColor.purple
         }
         if isOn[6] {
-            sundayLabel.textColor = UIColor.red
+            sundayLabel.textColor = UIColor.purple
         }
         
     }

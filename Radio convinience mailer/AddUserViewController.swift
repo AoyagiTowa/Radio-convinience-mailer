@@ -21,7 +21,6 @@ class AddUserViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         
         pickerView.delegate = self
         pickerView.dataSource = self
-        pickerView.showsSelectionIndicator = true
         
         let toolbar = UIToolbar(frame: CGRectMake(0, 0, 0, 35))
         _ = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(AddUserViewController.done))
