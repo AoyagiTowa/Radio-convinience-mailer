@@ -41,7 +41,7 @@
                                 <color key="textColor" red="0.99995225669999999" green="0.83124786620000002" blue="0.93178117279999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="↓" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Flx-dS-5cB">
+                            <textField opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="↓" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Flx-dS-5cB">
                                 <rect key="frame" x="99" y="145.5" width="283" height="34"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -333,7 +333,7 @@
                                 </state>
                                 <connections>
                                     <action selector="makeMail" destination="4wV-PO-SK7" eventType="touchUpInside" id="pJz-gQ-h50"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="ank-8U-MHf"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="sendMail" id="ank-8U-MHf"/>
                                 </connections>
                             </button>
                         </subviews>

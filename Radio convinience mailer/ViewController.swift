@@ -14,7 +14,10 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate,UIPi
     @IBOutlet var mainTitleField: UITextField!
     @IBOutlet var contentField: UITextView!
     var pickerView: UIPickerView = UIPickerView()
-    let mailList = ["banana@tbs.co.jp","nogizaka@allnightnippon.com","megane@tbs.co.jp"]
+    var mailList: [String] = []
+    let saveData: UserDefaults = UserDefaults.standard
+    var radio_array: [RadioClass] = []
+    var key_array: [String] = []
 
 
     
@@ -30,6 +33,18 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate,UIPi
         senderAdressField.layer.cornerRadius = 16
         mainTitleField.layer.cornerRadius = 16
         contentField.layer.cornerRadius = 16
+        
+        if saveData.object(forKey: "key") as? [String] != nil {
+            key_array = saveData.object(forKey: "key") as! [String]
+        }
+        for i in key_array {
+            guard let get_data = saveData.data(forKey: i) else {
+                return
+            }
+            let radio: RadioClass = try! JSONDecoder().decode(RadioClass.self, from: get_data)
+            mailList.append(radio.radioAddress)
+            radio_array.append(radio)
+        }
 
         // Do any additional setup after loading the view.
     }

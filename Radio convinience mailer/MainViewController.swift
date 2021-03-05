@@ -70,6 +70,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     @IBAction func makeMail() {
+        
     }
     /*
      // MARK: - Navigation
