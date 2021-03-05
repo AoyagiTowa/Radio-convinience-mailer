@@ -116,11 +116,8 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" red="0.41366198659999998" green="0.59256052969999995" blue="0.75688773389999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <connections>
-<<<<<<< HEAD
-                <outlet property="fridayLabel" destination="mPH-HF-5bo" id="Sr1-JN-ZM8"/>
-=======
+             
                 <outlet property="fridayLabel" destination="mPH-HF-5bo" id="nHd-zO-Aap"/>
->>>>>>> main
                 <outlet property="mondayLabel" destination="OCK-9r-LDB" id="tgH-2E-aSF"/>
                 <outlet property="radioAdressLabel" destination="jaS-UF-wOR" id="jbb-ZN-RpU"/>
                 <outlet property="radioNameLabel" destination="InX-8q-ku0" id="9jI-ig-PVl"/>
