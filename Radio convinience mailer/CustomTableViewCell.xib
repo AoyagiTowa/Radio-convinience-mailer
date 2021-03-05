@@ -10,13 +10,19 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="CustomTableViewCell" customModule="Radio_convinience_mailer" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="400" height="100"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="110" id="KGk-i7-Jjw" customClass="CustomTableViewCell" customModule="Radio_convinience_mailer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="110"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="400" height="100"/>
+                <rect key="frame" x="0.0" y="0.0" width="400" height="110"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rI7-hW-iFy">
+                        <rect key="frame" x="0.0" y="-4.5" width="400" height="100.5"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="0.99995225669999999" green="0.83124786620000002" blue="0.93178117279999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.99995225669999999" green="0.83124786620000002" blue="0.93178117279999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nogi.allnightnippon.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jaS-UF-wOR">
                         <rect key="frame" x="16" y="40" width="126" height="13.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -100,8 +106,6 @@
                         </subviews>
                     </stackView>
                 </subviews>
-                <color key="backgroundColor" red="0.99995225669999999" green="0.83124786620000002" blue="0.93178117279999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                <color key="tintColor" red="0.99995225669999999" green="0.83124786620000002" blue="0.93178117279999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="sUq-HJ-Dc9" firstAttribute="top" secondItem="jaS-UF-wOR" secondAttribute="bottom" constant="16" id="JlB-ta-Ybu"/>
                     <constraint firstItem="sUq-HJ-Dc9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Pc1-Zd-2CK"/>
@@ -116,7 +120,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" red="0.41366198659999998" green="0.59256052969999995" blue="0.75688773389999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <connections>
-             
+                <outlet property="backgroundView" destination="rI7-hW-iFy" id="8S1-xB-p9G"/>
                 <outlet property="fridayLabel" destination="mPH-HF-5bo" id="nHd-zO-Aap"/>
                 <outlet property="mondayLabel" destination="OCK-9r-LDB" id="tgH-2E-aSF"/>
                 <outlet property="radioAdressLabel" destination="jaS-UF-wOR" id="jbb-ZN-RpU"/>
@@ -127,9 +131,10 @@
                 <outlet property="sundayLabel" destination="5B3-3I-riA" id="TwW-sH-hdt"/>
                 <outlet property="tuesdayLabel" destination="afG-5S-fBe" id="7K6-kp-tyl"/>
                 <outlet property="tursdayLabel" destination="fot-Xc-EOj" id="doN-Mj-YIU"/>
+                <outlet property="view" destination="rI7-hW-iFy" id="Sgv-pF-E2u"/>
                 <outlet property="wednesdayLabel" destination="XoG-gB-mOe" id="CM1-Sh-Gpd"/>
             </connections>
-            <point key="canvasLocation" x="103" y="104"/>
+            <point key="canvasLocation" x="102.89855072463769" y="107.14285714285714"/>
         </tableViewCell>
     </objects>
     <resources>

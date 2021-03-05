@@ -18,8 +18,8 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate,UIPi
     let saveData: UserDefaults = UserDefaults.standard
     var radio_array: [RadioClass] = []
     var key_array: [String] = []
-
-
+    
+    
     
     
     
@@ -45,7 +45,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate,UIPi
             mailList.append(radio.radioAddress)
             radio_array.append(radio)
         }
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -91,6 +91,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate,UIPi
             self.present(alert, animated: true, completion: nil)
             print("fail")
         }
+        self.navigationController?.popViewController(animated: true)
     }
     
     //エラー処理

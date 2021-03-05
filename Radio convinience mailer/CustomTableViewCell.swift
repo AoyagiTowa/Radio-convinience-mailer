@@ -8,7 +8,7 @@
 import UIKit
 
 class CustomTableViewCell: UITableViewCell {
-
+    
     @IBOutlet var radioNameLabel: UILabel!
     @IBOutlet var radioAdressLabel: UILabel!
     @IBOutlet var radioStartTimeLabel: UILabel!
@@ -20,10 +20,11 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet var fridayLabel: UILabel!
     @IBOutlet var saturdayLabel: UILabel!
     @IBOutlet var sundayLabel: UILabel!
+    @IBOutlet var view: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        contentView.layer.cornerRadius = 32
+        view.layer.cornerRadius = 32
         // Initialization code
     }
     

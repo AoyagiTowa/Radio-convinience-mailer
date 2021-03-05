@@ -25,7 +25,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         table.dataSource = self
         table.delegate = self
-        table.rowHeight = 100
+        table.rowHeight = 110
         
         
         // Do any additional setup after loading the view.
@@ -40,8 +40,8 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             }
             let radio: RadioClass = try! JSONDecoder().decode(RadioClass.self, from: get_data)
             //AddRadioViewControllerでは検証できたので多分大丈夫。
-            print(radio.radioName)
             radio_array.append(radio)
+            table.reloadData()
         }
     }
     
