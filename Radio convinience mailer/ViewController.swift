@@ -14,9 +14,18 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate,UIPi
     @IBOutlet var mainTitleField: UITextField!
     @IBOutlet var contentField: UITextView!
     var pickerView: UIPickerView = UIPickerView()
-    let mailList = ["banana@tbs.co.jp","nogizaka@allnightnippon.com","megane@tbs.co.jp"]
-
-
+    var mailList: [String] = []
+    let saveData: UserDefaults = UserDefaults.standard
+    var radio_array: [RadioClass] = []
+    var key_array: [String] = []
+    var userRadioName: String!
+    var userAge = ""
+    var userRegion = ""
+    var userJender = ""
+    var senderAddress = ""
+    
+    
+    
     
     
     
@@ -25,12 +34,36 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate,UIPi
         sendMail()
         pickerView.delegate = self
         pickerView.dataSource = self
-        pickerView.showsSelectionIndicator = true
         self.senderAdressField.inputView = pickerView
         senderAdressField.layer.cornerRadius = 16
         mainTitleField.layer.cornerRadius = 16
         contentField.layer.cornerRadius = 16
-
+        
+        if saveData.object(forKey: "key") as? [String] != nil {
+            key_array = saveData.object(forKey: "key") as! [String]
+        }
+        for i in key_array {
+            guard let get_data = saveData.data(forKey: i) else {
+                return
+            }
+            let radio: RadioClass = try! JSONDecoder().decode(RadioClass.self, from: get_data)
+            mailList.append(radio.radioAddress)
+            radio_array.append(radio)
+        }
+        
+        senderAdressField.text = senderAddress
+        userRadioName = saveData.string(forKey: "ラジオネーム")
+        userAge = saveData.string(forKey: "年齢")!
+        userRegion = saveData.string(forKey: "居住区")!
+        userJender = saveData.string(forKey: "性別")!
+        contentField.text = """
+                ラジオネーム： \(userRadioName!)
+                年齢：\(userAge)
+                \(userJender)
+                \(userRegion)
+                """
+        
+        
         // Do any additional setup after loading the view.
     }
     
@@ -59,10 +92,10 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate,UIPi
             //送り先
             mail.setToRecipients([senderAdressField.text!])
             //件名
-            mail.setSubject(contentField.text!)
+            mail.setSubject(mainTitleField.text!)
             //メッセージ本文
             //ここに、ユーザー情報を入力(ラジネームなど)。ただし、改行のやり方は不明。要調査
-            mail.setMessageBody("テストメール", isHTML: false)
+            mail.setMessageBody(contentField.text!, isHTML: false)
             //メールを表示
             self.present(mail, animated: true, completion: nil)
             print("scucess")
@@ -76,6 +109,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate,UIPi
             self.present(alert, animated: true, completion: nil)
             print("fail")
         }
+        self.navigationController?.popViewController(animated: true)
     }
     
     //エラー処理

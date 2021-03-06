@@ -10,9 +10,14 @@ import UIKit
 class AddUserViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     
+    @IBOutlet var radioNameField: UITextField!
+    @IBOutlet var radioAgeField: UITextField!
+    @IBOutlet var radioRegionField: UITextField!
     @IBOutlet var jenderField: UITextField!
     @IBOutlet var saveButton: UIButton!
     var pickerView: UIPickerView = UIPickerView()
+    let saveData: UserDefaults = UserDefaults.standard
+
     
     let jenderList = ["男性","女性","非公開"]
     
@@ -25,6 +30,11 @@ class AddUserViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         let toolbar = UIToolbar(frame: CGRectMake(0, 0, 0, 35))
         _ = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(AddUserViewController.done))
         saveButton.layer.cornerRadius = 16
+        
+        radioNameField.text = saveData.string(forKey: "ラジオネーム")
+        radioAgeField.text = saveData.string(forKey: "年齢")
+        radioRegionField.text = saveData.string(forKey: "居住区")
+        jenderField.text = saveData.string(forKey: "性別")
 
         
         self.jenderField.inputView = pickerView
@@ -70,6 +80,24 @@ class AddUserViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func startApplication() {
+        if radioNameField.text == nil {
+            return
+        }
+        saveData.set(radioNameField.text, forKey: "ラジオネーム")
+        saveData.set(radioAgeField.text, forKey: "年齢")
+        saveData.set(radioRegionField.text, forKey: "居住区")
+        saveData.set(jenderField.text, forKey: "性別")
+        
+    }
+    override func viewDidAppear(_ animated: Bool) {
+            super.viewDidAppear(animated)
+            let userDefaults = UserDefaults.standard
+            let firstLunchKey = "firstLunchKey"
+            if userDefaults.bool(forKey: firstLunchKey) {
+            performSegue(withIdentifier: "firstOnly", sender: self)
+        }
+    }
     
     /*
      // MARK: - Navigation

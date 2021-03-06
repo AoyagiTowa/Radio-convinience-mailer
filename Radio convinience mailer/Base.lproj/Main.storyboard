@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Radio_convinience_mailer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mailer" id="BYZ-38-t0r" customClass="ViewController" customModule="Radio_convinience_mailer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,7 +41,7 @@
                                 <color key="textColor" red="0.99995225669999999" green="0.83124786620000002" blue="0.93178117279999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="↓" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Flx-dS-5cB">
+                            <textField opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="↓" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Flx-dS-5cB">
                                 <rect key="frame" x="99" y="145.5" width="283" height="34"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -94,7 +94,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-978" y="67"/>
+            <point key="canvasLocation" x="-1104" y="60"/>
         </scene>
         <!--Add Radio View Controller-->
         <scene sceneID="zuT-cf-i5K">
@@ -271,7 +271,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k6m-pW-BCn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-978" y="-632"/>
+            <point key="canvasLocation" x="-1103" y="-616"/>
         </scene>
         <!--About Radio View Controller-->
         <scene sceneID="Jg7-ht-OGh">
@@ -286,7 +286,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uq7-Ut-T9F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-177" y="78"/>
+            <point key="canvasLocation" x="-249" y="60"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dvi-nr-og6">
@@ -297,7 +297,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="4wV-PO-SK7" kind="relationship" relationship="rootViewController" id="rYi-70-yIv"/>
+                        <segue destination="4lf-R0-RcR" kind="relationship" relationship="rootViewController" id="2j2-w8-Fhk"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="039-ky-J3R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -333,7 +333,6 @@
                                 </state>
                                 <connections>
                                     <action selector="makeMail" destination="4wV-PO-SK7" eventType="touchUpInside" id="pJz-gQ-h50"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="ank-8U-MHf"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -357,9 +356,12 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="makeMailButton" destination="Ci3-lv-9kc" id="HLF-uZ-4cJ"/>
                         <outlet property="table" destination="BeL-PW-NmC" id="UUG-Qo-Tb6"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="sendMail" id="Oc4-18-AfC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ed8-Ui-2eY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -375,69 +377,66 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ラジオネーム" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSC-7r-KP6">
-                                <rect key="frame" x="32" y="76" width="104" height="21"/>
+                                <rect key="frame" x="32" y="120" width="104" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.99995225669999999" green="0.83124786620000002" blue="0.93178117279999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iWI-Cr-fKL">
-                                <rect key="frame" x="32" y="113" width="350" height="28.5"/>
+                                <rect key="frame" x="32" y="157" width="350" height="30"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="QJ1-wK-NTL"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="username"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="メールアドレス" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yg8-3J-Phk">
-                                <rect key="frame" x="32" y="173.5" width="122" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6tv-tH-MRh">
-                                <rect key="frame" x="32" y="226.5" width="350" height="28.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="email"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="年齢" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ECZ-hx-7iC">
-                                <rect key="frame" x="32" y="287" width="35" height="21"/>
+                                <rect key="frame" x="32" y="219" width="35" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.99995225669999999" green="0.83124786620000002" blue="0.93178117279999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hhV-MI-lXX">
-                                <rect key="frame" x="99" y="287" width="283" height="28.5"/>
+                            <textField opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hhV-MI-lXX">
+                                <rect key="frame" x="99" y="219" width="283" height="30"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="2Tg-4W-yf5"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="性別" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0J-io-iC5">
-                                <rect key="frame" x="32" y="372" width="35" height="21"/>
+                                <rect key="frame" x="32" y="304" width="35" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.99995225669999999" green="0.83124786620000002" blue="0.93178117279999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="↓" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x2v-q9-dyx">
-                                <rect key="frame" x="99" y="365.5" width="283" height="34"/>
+                            <textField opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="↓" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x2v-q9-dyx">
+                                <rect key="frame" x="99" y="299.5" width="283" height="30"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="50k-md-Oxf"/>
+                                </constraints>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="居住地域" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nhy-ay-9jv">
-                                <rect key="frame" x="32" y="457" width="69.5" height="21"/>
+                                <rect key="frame" x="32" y="389" width="69.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.99995225669999999" green="0.83124786620000002" blue="0.93178117279999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9lk-FZ-WsP">
-                                <rect key="frame" x="32" y="510" width="350" height="28.5"/>
+                                <rect key="frame" x="32" y="426" width="350" height="28.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xkI-2D-6Vp">
                                 <rect key="frame" x="107" y="738" width="200" height="60"/>
-                                <color key="backgroundColor" red="0.99995225669999999" green="0.83124786620000002" blue="0.93178117279999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.79940044880000005" green="0.6400375962" blue="0.73860913520000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="VTx-1b-bui"/>
                                     <constraint firstAttribute="height" constant="60" id="jCV-gu-R5y"/>
@@ -446,6 +445,10 @@
                                 <state key="normal" title="ラジオへの愛を誓う">
                                     <color key="titleColor" red="0.36237582559999998" green="0.59893417360000001" blue="0.77801340819999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="startApplication" destination="4lf-R0-RcR" eventType="touchUpInside" id="YjO-yK-0zr"/>
+                                    <segue destination="4wV-PO-SK7" kind="show" identifier="firstOnly" id="1dB-If-9gw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JBb-4M-Fae"/>
@@ -457,37 +460,36 @@
                             <constraint firstItem="hhV-MI-lXX" firstAttribute="leading" secondItem="ECZ-hx-7iC" secondAttribute="trailing" constant="32" id="DdP-RE-gfz"/>
                             <constraint firstItem="x2v-q9-dyx" firstAttribute="centerY" secondItem="P0J-io-iC5" secondAttribute="centerY" id="P8U-BW-lpV"/>
                             <constraint firstItem="x2v-q9-dyx" firstAttribute="leading" secondItem="P0J-io-iC5" secondAttribute="trailing" constant="32" id="Q6g-EA-rk9"/>
-                            <constraint firstItem="6tv-tH-MRh" firstAttribute="leading" secondItem="JBb-4M-Fae" secondAttribute="leading" constant="32" id="QD4-qI-xgp"/>
                             <constraint firstItem="JBb-4M-Fae" firstAttribute="trailing" secondItem="x2v-q9-dyx" secondAttribute="trailing" constant="32" id="RMW-Y8-hE0"/>
                             <constraint firstItem="xkI-2D-6Vp" firstAttribute="centerX" secondItem="cri-DU-uhL" secondAttribute="centerX" id="XlA-Oa-bou"/>
-                            <constraint firstItem="yg8-3J-Phk" firstAttribute="leading" secondItem="JBb-4M-Fae" secondAttribute="leading" constant="32" id="ZSA-zv-7fZ"/>
                             <constraint firstItem="JBb-4M-Fae" firstAttribute="trailing" secondItem="iWI-Cr-fKL" secondAttribute="trailing" constant="32" id="aTT-Ex-7ph"/>
                             <constraint firstItem="ECZ-hx-7iC" firstAttribute="leading" secondItem="JBb-4M-Fae" secondAttribute="leading" constant="32" id="ds8-Sa-clB"/>
-                            <constraint firstItem="JBb-4M-Fae" firstAttribute="trailing" secondItem="6tv-tH-MRh" secondAttribute="trailing" constant="32" id="g5c-2d-nyi"/>
-                            <constraint firstItem="6tv-tH-MRh" firstAttribute="top" secondItem="yg8-3J-Phk" secondAttribute="bottom" constant="32" id="i2Q-MQ-fac"/>
+                            <constraint firstItem="ECZ-hx-7iC" firstAttribute="top" secondItem="iWI-Cr-fKL" secondAttribute="bottom" constant="32" id="eGD-ot-K8C"/>
+                            <constraint firstItem="hhV-MI-lXX" firstAttribute="top" secondItem="iWI-Cr-fKL" secondAttribute="bottom" constant="32" id="iUk-zH-LHx"/>
                             <constraint firstItem="iWI-Cr-fKL" firstAttribute="leading" secondItem="JBb-4M-Fae" secondAttribute="leading" constant="32" id="k4g-h4-Nr6"/>
                             <constraint firstItem="JBb-4M-Fae" firstAttribute="trailing" secondItem="hhV-MI-lXX" secondAttribute="trailing" constant="32" id="k7T-j0-xrg"/>
-                            <constraint firstItem="hhV-MI-lXX" firstAttribute="top" secondItem="6tv-tH-MRh" secondAttribute="bottom" constant="32" id="kJn-kL-uzl"/>
                             <constraint firstItem="P0J-io-iC5" firstAttribute="leading" secondItem="JBb-4M-Fae" secondAttribute="leading" constant="32" id="kYH-Qp-XWf"/>
-                            <constraint firstItem="ECZ-hx-7iC" firstAttribute="top" secondItem="6tv-tH-MRh" secondAttribute="bottom" constant="32" id="nx4-l9-Tmc"/>
                             <constraint firstItem="iWI-Cr-fKL" firstAttribute="top" secondItem="bSC-7r-KP6" secondAttribute="bottom" constant="16" id="qH0-nT-wqH"/>
-                            <constraint firstItem="9lk-FZ-WsP" firstAttribute="top" secondItem="Nhy-ay-9jv" secondAttribute="bottom" constant="32" id="qQJ-wR-shS"/>
+                            <constraint firstItem="9lk-FZ-WsP" firstAttribute="top" secondItem="Nhy-ay-9jv" secondAttribute="bottom" constant="16" id="qQJ-wR-shS"/>
                             <constraint firstItem="Nhy-ay-9jv" firstAttribute="leading" secondItem="JBb-4M-Fae" secondAttribute="leading" constant="32" id="tqb-Sq-BfM"/>
                             <constraint firstItem="bSC-7r-KP6" firstAttribute="top" secondItem="JBb-4M-Fae" secondAttribute="top" constant="32" id="twH-U7-dYi"/>
                             <constraint firstItem="JBb-4M-Fae" firstAttribute="bottom" secondItem="xkI-2D-6Vp" secondAttribute="bottom" constant="64" id="wJO-PA-28d"/>
                             <constraint firstItem="Nhy-ay-9jv" firstAttribute="top" secondItem="P0J-io-iC5" secondAttribute="bottom" constant="64" id="y1N-yD-Z3c"/>
                             <constraint firstItem="bSC-7r-KP6" firstAttribute="leading" secondItem="JBb-4M-Fae" secondAttribute="leading" constant="32" id="y2r-4i-Y63"/>
-                            <constraint firstItem="yg8-3J-Phk" firstAttribute="top" secondItem="iWI-Cr-fKL" secondAttribute="bottom" constant="32" id="yDL-sU-MRl"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Sz2-y7-Aou"/>
                     <connections>
                         <outlet property="jenderField" destination="x2v-q9-dyx" id="fL9-f9-5Tc"/>
+                        <outlet property="radioAgeField" destination="hhV-MI-lXX" id="Zgy-6M-qm1"/>
+                        <outlet property="radioNameField" destination="iWI-Cr-fKL" id="bt9-hc-TeK"/>
+                        <outlet property="radioRegionField" destination="9lk-FZ-WsP" id="SnR-5p-de3"/>
                         <outlet property="saveButton" destination="xkI-2D-6Vp" id="gut-WP-cC7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9f8-PY-f84" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-178" y="-632"/>
+            <point key="canvasLocation" x="-2801" y="60"/>
         </scene>
     </scenes>
     <resources>

@@ -38,6 +38,7 @@
 		8ACAA90025E63625003C65C2 /* AddRadioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRadioViewController.swift; sourceTree = "<group>"; };
 		8ACAA90325E63634003C65C2 /* AddUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserViewController.swift; sourceTree = "<group>"; };
 		8ACAA90625E636A1003C65C2 /* RadioClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioClass.swift; sourceTree = "<group>"; };
+		8AF55F2B25F35E05007664C1 /* LA1MakkanAoyagiDistribution.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = LA1MakkanAoyagiDistribution.mobileprovision; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +71,7 @@
 		8AA74AA825E39E200092F1CB /* Radio convinience mailer */ = {
 			isa = PBXGroup;
 			children = (
+				8AF55F2B25F35E05007664C1 /* LA1MakkanAoyagiDistribution.mobileprovision */,
 				8AA74AA925E39E200092F1CB /* AppDelegate.swift */,
 				8AA74AAB25E39E200092F1CB /* SceneDelegate.swift */,
 				8AA74AAD25E39E200092F1CB /* ViewController.swift */,
@@ -314,14 +316,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 2K446D59RQ;
 				INFOPLIST_FILE = "Radio convinience mailer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "app.aoyagi.makkan.Radio-convinience-mailer";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.lifeistech.Radio-convinience-mailer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "LA1-MakkanAoyagi-Distribution";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -332,14 +337,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 2K446D59RQ;
 				INFOPLIST_FILE = "Radio convinience mailer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "app.aoyagi.makkan.Radio-convinience-mailer";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.lifeistech.Radio-convinience-mailer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "LA1-MakkanAoyagi-Distribution";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

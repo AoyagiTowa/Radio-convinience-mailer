@@ -60,26 +60,24 @@ class AddRadioViewController: UIViewController {
             //オリジナルクラスのRadioClassのインスタンスに、それぞれ値を代入する
             radioClass = RadioClass.init(radioName: radioNameField.text!, radioAddress: radioAdressField.text!, radioDays: weekdaysBool, radioStart: startTimePicker.date, radioStop: finishTimePIcker.date)
             
-            
-            
             //ここでkey_arrayにappendできていない。radioNameField.textは出力できる。
+//            for i in key_array {
+//                if i == radioNameField.text!{
+//                    break
+//                }else {
+//                    key_array.append(radioNameField.text!)
+//                }
+//            }
             key_array.append(radioNameField.text!)
+
             
             print(key_array)
             //encodeの処理部分のメソッド呼び出し
             saveRadio(radio: radioClass, key_array: key_array)
             //saveData.set("bananamoon", forKey: "key")
-            self.navigationController?.popViewController(animated: true)
         }
+        self.navigationController?.popViewController(animated: true)
         
-        
-        //以下はテスト処理。このクラス内ではencodeもdecodeも上手くいった。
-        let test = try? JSONEncoder().encode(radioClass)
-        saveData.set(test, forKey: "test")
-        guard let get_data = saveData.data(forKey: "test") else {
-            return
-        }
-        let test_radio: RadioClass = try! JSONDecoder().decode(RadioClass.self, from: get_data)
     }
     
     
@@ -90,6 +88,7 @@ class AddRadioViewController: UIViewController {
         saveData.set(key_array, forKey: "key")
     }
 }
+
 
 
 /*
