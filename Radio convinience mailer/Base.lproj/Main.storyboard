@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Radio_convinience_mailer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mailer" id="BYZ-38-t0r" customClass="ViewController" customModule="Radio_convinience_mailer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -333,7 +333,6 @@
                                 </state>
                                 <connections>
                                     <action selector="makeMail" destination="4wV-PO-SK7" eventType="touchUpInside" id="pJz-gQ-h50"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="sendMail" id="ank-8U-MHf"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -362,6 +361,7 @@
                     <connections>
                         <outlet property="makeMailButton" destination="Ci3-lv-9kc" id="HLF-uZ-4cJ"/>
                         <outlet property="table" destination="BeL-PW-NmC" id="UUG-Qo-Tb6"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="sendMail" id="Oc4-18-AfC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ed8-Ui-2eY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

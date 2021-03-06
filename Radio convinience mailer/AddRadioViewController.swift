@@ -61,13 +61,15 @@ class AddRadioViewController: UIViewController {
             radioClass = RadioClass.init(radioName: radioNameField.text!, radioAddress: radioAdressField.text!, radioDays: weekdaysBool, radioStart: startTimePicker.date, radioStop: finishTimePIcker.date)
             
             //ここでkey_arrayにappendできていない。radioNameField.textは出力できる。
-            for i in key_array {
-                if i == radioNameField.text!{
-                    break
-                }else {
-                    key_array.append(radioNameField.text!)
-                }
-            }
+//            for i in key_array {
+//                if i == radioNameField.text!{
+//                    break
+//                }else {
+//                    key_array.append(radioNameField.text!)
+//                }
+//            }
+            key_array.append(radioNameField.text!)
+
             
             print(key_array)
             //encodeの処理部分のメソッド呼び出し

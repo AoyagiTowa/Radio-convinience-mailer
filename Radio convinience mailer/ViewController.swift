@@ -18,6 +18,12 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate,UIPi
     let saveData: UserDefaults = UserDefaults.standard
     var radio_array: [RadioClass] = []
     var key_array: [String] = []
+    var userRadioName: String!
+    var userAge = ""
+    var userRegion = ""
+    var userJender = ""
+    var senderAddress = ""
+    
     
     
     
@@ -28,7 +34,6 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate,UIPi
         sendMail()
         pickerView.delegate = self
         pickerView.dataSource = self
-        pickerView.showsSelectionIndicator = true
         self.senderAdressField.inputView = pickerView
         senderAdressField.layer.cornerRadius = 16
         mainTitleField.layer.cornerRadius = 16
@@ -45,6 +50,19 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate,UIPi
             mailList.append(radio.radioAddress)
             radio_array.append(radio)
         }
+        
+        senderAdressField.text = senderAddress
+        userRadioName = saveData.string(forKey: "ラジオネーム")
+        userAge = saveData.string(forKey: "年齢")!
+        userRegion = saveData.string(forKey: "居住区")!
+        userJender = saveData.string(forKey: "性別")!
+        contentField.text = """
+                ラジオネーム： \(userRadioName!)
+                年齢：\(userAge)
+                \(userJender)
+                \(userRegion)
+                """
+        
         
         // Do any additional setup after loading the view.
     }
@@ -74,10 +92,10 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate,UIPi
             //送り先
             mail.setToRecipients([senderAdressField.text!])
             //件名
-            mail.setSubject(contentField.text!)
+            mail.setSubject(mainTitleField.text!)
             //メッセージ本文
             //ここに、ユーザー情報を入力(ラジネームなど)。ただし、改行のやり方は不明。要調査
-            mail.setMessageBody("テストメール", isHTML: false)
+            mail.setMessageBody(contentField.text!, isHTML: false)
             //メールを表示
             self.present(mail, animated: true, completion: nil)
             print("scucess")

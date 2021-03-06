@@ -62,14 +62,20 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "mailer") as! ViewController
+        nextVC.senderAddress = radio_array[indexPath.row].radioAddress
+        navigationController!.pushViewController(nextVC, animated: true)
         
     }
+    
     
     
     @IBAction func addRadioInfo() {
     }
     
     @IBAction func makeMail() {
+        self.performSegue(withIdentifier: "sendMail", sender: nil)
+
         
     }
     /*
