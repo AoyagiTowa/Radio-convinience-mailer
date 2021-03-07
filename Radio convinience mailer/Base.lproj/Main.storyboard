@@ -108,14 +108,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="アドレスを記入してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="haG-BA-r2x">
-                                <rect key="frame" x="32" y="187.5" width="350" height="34"/>
+                            <textField opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="アドレスを記入してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="haG-BA-r2x">
+                                <rect key="frame" x="32" y="216" width="350" height="32"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="tkH-wO-FTb"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1DY-k8-35v">
-                                <rect key="frame" x="8" y="410" width="398" height="31"/>
+                                <rect key="frame" x="8" y="316.5" width="398" height="31"/>
                                 <subviews>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="A4S-wh-zR7">
                                         <rect key="frame" x="0.0" y="0.0" width="59" height="31"/>
@@ -141,7 +144,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="smL-3R-wfz">
-                                <rect key="frame" x="8" y="373.5" width="398" height="20.5"/>
+                                <rect key="frame" x="8" y="280" width="398" height="20.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="月" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSe-WZ-PS7">
                                         <rect key="frame" x="0.0" y="0.0" width="57" height="20.5"/>
@@ -187,35 +190,38 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="開始時刻" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHd-OD-dIy">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="開始時刻" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHd-OD-dIy">
                                 <rect key="frame" x="172.5" y="489" width="69.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="0.99995225669999999" green="0.83124786620000002" blue="0.93178117279999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="5" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="ltd-xV-Rwz">
+                            <datePicker contentMode="scaleAspectFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="5" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="ltd-xV-Rwz">
                                 <rect key="frame" x="47" y="525.5" width="320" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="KNT-WD-2Pf"/>
                                 </constraints>
                                 <locale key="locale" localeIdentifier="ja_JP"/>
                             </datePicker>
-                            <datePicker contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="5" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="X0g-gi-ppc">
+                            <datePicker contentMode="scaleAspectFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="5" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="X0g-gi-ppc">
                                 <rect key="frame" x="47" y="679.5" width="320" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="iZ6-uW-1mJ"/>
                                 </constraints>
                                 <locale key="locale" localeIdentifier="ja_JP"/>
                             </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="終了時刻" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6l-6w-eWQ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="終了時刻" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6l-6w-eWQ">
                                 <rect key="frame" x="172.5" y="825.5" width="69.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="0.99995225669999999" green="0.83124786620000002" blue="0.93178117279999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ラジオ番組名を入力してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="omN-8h-e0d">
-                                <rect key="frame" x="32" y="121.5" width="350" height="34"/>
+                            <textField opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ラジオ番組名を入力してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="omN-8h-e0d">
+                                <rect key="frame" x="32" y="152" width="350" height="32"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="Yig-eN-3E5"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -237,11 +243,11 @@
                             <constraint firstItem="X0g-gi-ppc" firstAttribute="centerX" secondItem="d5r-OS-n6I" secondAttribute="centerX" id="VFi-sA-E8E"/>
                             <constraint firstItem="z6l-6w-eWQ" firstAttribute="top" secondItem="X0g-gi-ppc" secondAttribute="bottom" constant="16" id="VGq-ek-w0m"/>
                             <constraint firstItem="1DY-k8-35v" firstAttribute="top" secondItem="smL-3R-wfz" secondAttribute="bottom" constant="16" id="WUC-Ji-ueO"/>
+                            <constraint firstItem="smL-3R-wfz" firstAttribute="top" secondItem="haG-BA-r2x" secondAttribute="bottom" constant="32" id="Xlt-a3-whx"/>
                             <constraint firstItem="eKd-ky-RPf" firstAttribute="trailing" secondItem="omN-8h-e0d" secondAttribute="trailing" constant="32" id="aJ8-VW-u4z"/>
                             <constraint firstItem="z6l-6w-eWQ" firstAttribute="centerX" secondItem="d5r-OS-n6I" secondAttribute="centerX" id="b0m-za-fx3"/>
                             <constraint firstItem="LHd-OD-dIy" firstAttribute="top" secondItem="1DY-k8-35v" secondAttribute="bottom" constant="48" id="eQW-8F-Odx"/>
                             <constraint firstItem="omN-8h-e0d" firstAttribute="top" secondItem="eKd-ky-RPf" secondAttribute="top" constant="64" id="l0I-Gj-hYE"/>
-                            <constraint firstItem="smL-3R-wfz" firstAttribute="top" secondItem="haG-BA-r2x" secondAttribute="bottom" constant="64" id="l4D-cC-5p2"/>
                             <constraint firstItem="smL-3R-wfz" firstAttribute="leading" secondItem="eKd-ky-RPf" secondAttribute="leading" constant="8" id="oXG-8f-CHq"/>
                             <constraint firstItem="haG-BA-r2x" firstAttribute="top" secondItem="omN-8h-e0d" secondAttribute="bottom" constant="32" id="tdG-8j-hvT"/>
                         </constraints>
