@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A04C9B325F5186200209260 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A04C9B225F5186200209260 /* RootViewController.swift */; };
 		8A122B7025ECB37600DE67AB /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A122B6E25ECB37600DE67AB /* CustomTableViewCell.swift */; };
 		8A122B7125ECB37600DE67AB /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A122B6F25ECB37600DE67AB /* CustomTableViewCell.xib */; };
 		8AA74AAA25E39E200092F1CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA74AA925E39E200092F1CB /* AppDelegate.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A04C9B225F5186200209260 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		8A122B6E25ECB37600DE67AB /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		8A122B6F25ECB37600DE67AB /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		8AA74AA625E39E200092F1CB /* Radio convinience mailer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Radio convinience mailer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +88,7 @@
 				8ACAA90625E636A1003C65C2 /* RadioClass.swift */,
 				8A122B6E25ECB37600DE67AB /* CustomTableViewCell.swift */,
 				8A122B6F25ECB37600DE67AB /* CustomTableViewCell.xib */,
+				8A04C9B225F5186200209260 /* RootViewController.swift */,
 			);
 			path = "Radio convinience mailer";
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A04C9B325F5186200209260 /* RootViewController.swift in Sources */,
 				8ACAA90725E636A1003C65C2 /* RadioClass.swift in Sources */,
 				8AA74AAE25E39E200092F1CB /* ViewController.swift in Sources */,
 				8ACAA8FE25E635EF003C65C2 /* AboutRadioViewController.swift in Sources */,
@@ -324,6 +328,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.lifeistech.Radio-convinience-mailer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "LA1-MakkanAoyagi-Distribution";
@@ -345,6 +350,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.lifeistech.Radio-convinience-mailer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "LA1-MakkanAoyagi-Distribution";
