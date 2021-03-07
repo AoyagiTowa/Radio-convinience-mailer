@@ -42,9 +42,7 @@ class AddRadioViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func retuen() {
-        self.navigationController?.popViewController(animated: true)
-    }
+   
     @IBAction func save() {
         if radioNameField == nil ||
             radioAdressField == nil{
@@ -86,6 +84,10 @@ class AddRadioViewController: UIViewController {
         let data = try? JSONEncoder().encode(radio)
         saveData.set(data, forKey: radio.radioName)
         saveData.set(key_array, forKey: "key")
+    }
+    
+    @IBAction func back(){
+        self.navigationController?.popViewController(animated: true)
     }
 }
 

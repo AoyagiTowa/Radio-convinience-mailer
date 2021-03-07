@@ -22,15 +22,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         table.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomCell")
         makeMailButton.layer.cornerRadius = 32
-        
-        table.dataSource = self
-        table.delegate = self
-        table.rowHeight = 110
-        
-        
-        // Do any additional setup after loading the view.
-    }
-    override func viewWillAppear(_ animated: Bool) {
         if saveData.object(forKey: "key") as? [String] != nil {
             key_array = saveData.object(forKey: "key") as! [String]
         }
@@ -43,7 +34,20 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             radio_array.append(radio)
             table.reloadData()
         }
+        table.dataSource = self
+        table.delegate = self
+        table.rowHeight = 110
+        
+        
+        // Do any additional setup after loading the view.
     }
+    override func viewWillAppear(_ animated: Bool) {
+        
+        table.reloadData()
+    
+    }
+    
+    
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -75,9 +79,11 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBAction func makeMail() {
         self.performSegue(withIdentifier: "sendMail", sender: nil)
-
+        
         
     }
+    
+    
     /*
      // MARK: - Navigation
      

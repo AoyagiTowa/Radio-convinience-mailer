@@ -17,6 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -46,6 +47,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
+    
+    func skipLogin() {
+             //使ってるストーリーボード（何もいじってない限り ファイル名は"Main.storyboard" なので "Main" と記入。
+             let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
+             //ログイン後に飛びたいストーリボード。Identifier は Main.storyboard で設定。
+             let homeViewController = storyboard.instantiateViewController(identifier: "tableStoryboard")
+
+             //rootViewController (初期画面）を homeViewController にする。
+             window?.rootViewController = homeViewController
+
+             //画面を表示。
+             window?.makeKeyAndVisible()
+         }
 
 
 }

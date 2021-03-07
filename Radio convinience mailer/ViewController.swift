@@ -148,6 +148,9 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate,UIPi
         self.senderAdressField.text = mailList[row]
     }
     
+    @IBAction func back(){
+        self.navigationController?.popViewController(animated: true)
+    }
     
     
 }

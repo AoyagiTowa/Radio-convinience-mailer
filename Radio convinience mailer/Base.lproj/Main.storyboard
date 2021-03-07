@@ -78,7 +78,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WqN-XD-hiM">
-                        <barButtonItem key="leftBarButtonItem" title="戻る" id="G2m-Ws-adY"/>
+                        <barButtonItem key="leftBarButtonItem" title="戻る" id="G2m-Ws-adY">
+                            <connections>
+                                <action selector="back" destination="BYZ-38-t0r" id="1pd-YZ-6gH"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="送信" id="7P8-Gh-MfZ">
                             <connections>
                                 <action selector="send" destination="BYZ-38-t0r" id="HXY-ph-Jmq"/>
@@ -245,7 +249,7 @@
                     <navigationItem key="navigationItem" id="BDx-A8-iNT">
                         <barButtonItem key="leftBarButtonItem" title="戻る" id="QTd-Vo-mZP">
                             <connections>
-                                <action selector="retuen" destination="0Il-xt-99k" id="dMQ-WV-xG2"/>
+                                <action selector="back" destination="0Il-xt-99k" id="TVe-62-x1d"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="保存" id="oHX-pB-dmF">
@@ -291,13 +295,14 @@
         <!--Navigation Controller-->
         <scene sceneID="dvi-nr-og6">
             <objects>
-                <navigationController id="A3r-Gp-anf" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navigate" modalPresentationStyle="fullScreen" id="A3r-Gp-anf" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="A5N-YS-sYu"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iBc-DF-jXV">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="4lf-R0-RcR" kind="relationship" relationship="rootViewController" id="2j2-w8-Fhk"/>
+                        <segue destination="4lf-R0-RcR" kind="relationship" relationship="rootViewController" id="BzU-VB-AJv"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="039-ky-J3R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -328,7 +333,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="plus" catalog="system">
+                                <state key="normal" image="envelope.fill" catalog="system">
                                     <color key="titleColor" red="0.16005014670000001" green="0.15927695759999999" blue="0.1608233359" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
@@ -349,7 +354,8 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gWI-EQ-fmt">
-                        <barButtonItem key="rightBarButtonItem" title="追加" id="kbE-Ed-XuY">
+                        <barButtonItem key="leftBarButtonItem" id="tr7-0e-lcJ"/>
+                        <barButtonItem key="rightBarButtonItem" title="番組を追加" id="kbE-Ed-XuY">
                             <connections>
                                 <action selector="addRadioInfo" destination="4wV-PO-SK7" id="EL5-6s-41z"/>
                                 <segue destination="0Il-xt-99k" kind="show" id="icS-0F-KuI"/>
@@ -366,12 +372,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ed8-Ui-2eY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1965.217391304348" y="59.598214285714285"/>
+            <point key="canvasLocation" x="-1965" y="872"/>
         </scene>
         <!--Add User View Controller-->
         <scene sceneID="ErH-YN-0Cl">
             <objects>
-                <viewController id="4lf-R0-RcR" customClass="AddUserViewController" customModule="Radio_convinience_mailer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="userRegister" id="4lf-R0-RcR" customClass="AddUserViewController" customModule="Radio_convinience_mailer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cri-DU-uhL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -447,7 +453,6 @@
                                 </state>
                                 <connections>
                                     <action selector="startApplication" destination="4lf-R0-RcR" eventType="touchUpInside" id="YjO-yK-0zr"/>
-                                    <segue destination="4wV-PO-SK7" kind="show" identifier="firstOnly" id="1dB-If-9gw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -478,13 +483,14 @@
                             <constraint firstItem="bSC-7r-KP6" firstAttribute="leading" secondItem="JBb-4M-Fae" secondAttribute="leading" constant="32" id="y2r-4i-Y63"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Sz2-y7-Aou"/>
+                    <navigationItem key="navigationItem" id="zeL-Ym-xie"/>
                     <connections>
                         <outlet property="jenderField" destination="x2v-q9-dyx" id="fL9-f9-5Tc"/>
                         <outlet property="radioAgeField" destination="hhV-MI-lXX" id="Zgy-6M-qm1"/>
                         <outlet property="radioNameField" destination="iWI-Cr-fKL" id="bt9-hc-TeK"/>
                         <outlet property="radioRegionField" destination="9lk-FZ-WsP" id="SnR-5p-de3"/>
                         <outlet property="saveButton" destination="xkI-2D-6Vp" id="gut-WP-cC7"/>
+                        <segue destination="4wV-PO-SK7" kind="show" identifier="main" id="owc-om-0Aa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9f8-PY-f84" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -493,7 +499,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="envelope.fill" catalog="system" width="128" height="93"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

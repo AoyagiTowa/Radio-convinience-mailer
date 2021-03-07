@@ -88,15 +88,9 @@ class AddUserViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         saveData.set(radioAgeField.text, forKey: "年齢")
         saveData.set(radioRegionField.text, forKey: "居住区")
         saveData.set(jenderField.text, forKey: "性別")
+       performSegue(withIdentifier: "main", sender: nil)
+
         
-    }
-    override func viewDidAppear(_ animated: Bool) {
-            super.viewDidAppear(animated)
-            let userDefaults = UserDefaults.standard
-            let firstLunchKey = "firstLunchKey"
-            if userDefaults.bool(forKey: firstLunchKey) {
-            performSegue(withIdentifier: "firstOnly", sender: self)
-        }
     }
     
     /*
