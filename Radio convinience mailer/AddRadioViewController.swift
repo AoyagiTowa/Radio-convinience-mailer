@@ -58,20 +58,17 @@ class AddRadioViewController: UIViewController {
             //オリジナルクラスのRadioClassのインスタンスに、それぞれ値を代入する
             radioClass = RadioClass.init(radioName: radioNameField.text!, radioAddress: radioAdressField.text!, radioDays: weekdaysBool, radioStart: startTimePicker.date, radioStop: finishTimePIcker.date)
             
-            //ここでkey_arrayにappendできていない。radioNameField.textは出力できる。
-//            for i in key_array {
-//                if i == radioNameField.text!{
-//                    break
-//                }else {
-//                    key_array.append(radioNameField.text!)
-//                }
-//            }
-            key_array.append(radioNameField.text!)
-
-            
+           
+            for i in key_array{
+                if radioNameField.text! == i {
+                    break;
+                }else {
+                    key_array.append(radioNameField.text!)
+                    saveRadio(radio: radioClass, key_array: key_array)
+                }
+            }
             print(key_array)
             //encodeの処理部分のメソッド呼び出し
-            saveRadio(radio: radioClass, key_array: key_array)
             //saveData.set("bananamoon", forKey: "key")
         }
         self.navigationController?.popViewController(animated: true)
