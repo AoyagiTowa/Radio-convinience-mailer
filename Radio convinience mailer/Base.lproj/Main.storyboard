@@ -308,7 +308,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="4lf-R0-RcR" kind="relationship" relationship="rootViewController" id="BzU-VB-AJv"/>
+                        <segue destination="4wV-PO-SK7" kind="relationship" relationship="rootViewController" id="JQW-SJ-Ny2"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="039-ky-J3R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -318,7 +318,7 @@
         <!--Main View Controller-->
         <scene sceneID="PYQ-2M-8xh">
             <objects>
-                <viewController id="4wV-PO-SK7" customClass="MainViewController" customModule="Radio_convinience_mailer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4wV-PO-SK7" customClass="MainViewController" customModule="Radio_convinience_mailer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cP5-9U-qba">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -389,13 +389,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ラジオネーム" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSC-7r-KP6">
-                                <rect key="frame" x="32" y="120" width="104" height="21"/>
+                                <rect key="frame" x="32" y="76" width="104" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.99995225669999999" green="0.83124786620000002" blue="0.93178117279999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iWI-Cr-fKL">
-                                <rect key="frame" x="32" y="157" width="350" height="30"/>
+                                <rect key="frame" x="32" y="113" width="350" height="30"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="QJ1-wK-NTL"/>
@@ -404,13 +404,13 @@
                                 <textInputTraits key="textInputTraits" textContentType="username"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="年齢" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ECZ-hx-7iC">
-                                <rect key="frame" x="32" y="219" width="35" height="21"/>
+                                <rect key="frame" x="32" y="175" width="35" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.99995225669999999" green="0.83124786620000002" blue="0.93178117279999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hhV-MI-lXX">
-                                <rect key="frame" x="99" y="219" width="283" height="30"/>
+                                <rect key="frame" x="99" y="175" width="283" height="30"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="2Tg-4W-yf5"/>
@@ -419,13 +419,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="性別" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0J-io-iC5">
-                                <rect key="frame" x="32" y="304" width="35" height="21"/>
+                                <rect key="frame" x="32" y="260" width="35" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.99995225669999999" green="0.83124786620000002" blue="0.93178117279999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="↓" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x2v-q9-dyx">
-                                <rect key="frame" x="99" y="299.5" width="283" height="30"/>
+                                <rect key="frame" x="99" y="255.5" width="283" height="30"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="50k-md-Oxf"/>
@@ -435,13 +435,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="居住地域" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nhy-ay-9jv">
-                                <rect key="frame" x="32" y="389" width="69.5" height="21"/>
+                                <rect key="frame" x="32" y="345" width="69.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.99995225669999999" green="0.83124786620000002" blue="0.93178117279999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9lk-FZ-WsP">
-                                <rect key="frame" x="32" y="426" width="350" height="28.5"/>
+                                <rect key="frame" x="32" y="382" width="350" height="28.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
@@ -496,7 +496,7 @@
                         <outlet property="radioNameField" destination="iWI-Cr-fKL" id="bt9-hc-TeK"/>
                         <outlet property="radioRegionField" destination="9lk-FZ-WsP" id="SnR-5p-de3"/>
                         <outlet property="saveButton" destination="xkI-2D-6Vp" id="gut-WP-cC7"/>
-                        <segue destination="4wV-PO-SK7" kind="show" identifier="main" id="owc-om-0Aa"/>
+                        <segue destination="A3r-Gp-anf" kind="show" identifier="main" id="089-JS-B0O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9f8-PY-f84" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
