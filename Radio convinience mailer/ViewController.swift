@@ -31,7 +31,6 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate,UIPi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        sendMail()
         pickerView.delegate = self
         pickerView.dataSource = self
         self.senderAdressField.inputView = pickerView
@@ -68,7 +67,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate,UIPi
     }
     
     @IBAction func send(){
-        
+        sendMail()
     }
     func sendMail() {
         if contentField.text == nil {
