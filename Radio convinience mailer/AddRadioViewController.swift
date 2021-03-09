@@ -42,7 +42,7 @@ class AddRadioViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-   
+    
     @IBAction func save() {
         if radioNameField == nil ||
             radioAdressField == nil{
@@ -58,15 +58,18 @@ class AddRadioViewController: UIViewController {
             //オリジナルクラスのRadioClassのインスタンスに、それぞれ値を代入する
             radioClass = RadioClass.init(radioName: radioNameField.text!, radioAddress: radioAdressField.text!, radioDays: weekdaysBool, radioStart: startTimePicker.date, radioStop: finishTimePIcker.date)
             
-           
-            for i in key_array{
-                if radioNameField.text! == i {
-                    break;
-                }else {
-                    key_array.append(radioNameField.text!)
-                    saveRadio(radio: radioClass, key_array: key_array)
-                }
-            }
+            key_array.append(radioNameField.text!)
+            saveRadio(radio: radioClass, key_array: key_array)
+            
+            
+            //            for i in key_array{
+            //                if radioNameField.text! == i {
+            //                    break;
+            //                }else {
+            //                    key_array.append(radioNameField.text!)
+            //                    saveRadio(radio: radioClass, key_array: key_array)
+            //                }
+            //            }
             print(key_array)
             //encodeの処理部分のメソッド呼び出し
             //saveData.set("bananamoon", forKey: "key")
