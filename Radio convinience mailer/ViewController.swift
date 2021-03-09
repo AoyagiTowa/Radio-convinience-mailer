@@ -68,7 +68,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate,UIPi
     }
     
     @IBAction func send(){
-        
+        sendMail()
     }
     func sendMail() {
         if contentField.text == nil {
