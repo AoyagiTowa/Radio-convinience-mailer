@@ -37,6 +37,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         table.dataSource = self
         table.delegate = self
         table.rowHeight = 110
+        table.reloadData()
         
         
         // Do any additional setup after loading the view.
@@ -45,6 +46,9 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         table.reloadData()
     
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        table.reloadData()
     }
     
     
