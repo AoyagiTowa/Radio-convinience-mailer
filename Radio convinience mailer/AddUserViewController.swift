@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddUserViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class AddUserViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UITextFieldDelegate {
     
     
     @IBOutlet var radioNameField: UITextField!
@@ -17,7 +17,6 @@ class AddUserViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     @IBOutlet var saveButton: UIButton!
     var pickerView: UIPickerView = UIPickerView()
     let saveData: UserDefaults = UserDefaults.standard
-
     
     let jenderList = ["男性","女性","非公開"]
     
@@ -26,20 +25,43 @@ class AddUserViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         
         pickerView.delegate = self
         pickerView.dataSource = self
+        radioNameField.delegate = self
+        radioAgeField.delegate = self
+        radioRegionField.delegate = self
+        hideKeyboardWhenTappedAround()
         
-        let toolbar = UIToolbar(frame: CGRectMake(0, 0, 0, 35))
-        _ = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(AddUserViewController.done))
+        let toolbar_jender = UIToolbar(frame: CGRectMake(0, 0, view.frame.size.width, 35))
+        let toolbar_age = UIToolbar(frame: CGRectMake(0, 0, view.frame.size.width, 35))
+        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(AddUserViewController.done))
+        let doneItem_age = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(AddUserViewController.done_age))
+        toolbar_jender.setItems([doneItem], animated: true)
+        toolbar_age.setItems([doneItem_age], animated: true)
+        
+        
+        
         saveButton.layer.cornerRadius = 16
-        
         radioNameField.text = saveData.string(forKey: "ラジオネーム")
         radioAgeField.text = saveData.string(forKey: "年齢")
         radioRegionField.text = saveData.string(forKey: "居住区")
         jenderField.text = saveData.string(forKey: "性別")
-
+        
         
         self.jenderField.inputView = pickerView
-        self.jenderField.inputAccessoryView = toolbar
+        self.jenderField.inputAccessoryView = toolbar_jender
+        self.radioAgeField.inputAccessoryView = toolbar_age
         // Do any additional setup after loading the view.
+    }
+    
+    
+    
+    
+    
+    
+ 
+  
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     
@@ -67,6 +89,10 @@ class AddUserViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     @objc func done() {
         self.jenderField.endEditing(true)
+        self.jenderField.text = "\(jenderList[pickerView.selectedRow(inComponent: 0)])"
+    }
+    @objc func done_age() {
+        self.radioAgeField.endEditing(true)
     }
     
     
@@ -88,8 +114,8 @@ class AddUserViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         saveData.set(radioAgeField.text, forKey: "年齢")
         saveData.set(radioRegionField.text, forKey: "居住区")
         saveData.set(jenderField.text, forKey: "性別")
-       performSegue(withIdentifier: "main", sender: nil)
-
+        performSegue(withIdentifier: "main", sender: nil)
+        
         
     }
     
@@ -103,4 +129,16 @@ class AddUserViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
      }
      */
     
+}
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.hideKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+
+    @objc func hideKeyboard() {
+        view.endEditing(true)
+    }
 }
