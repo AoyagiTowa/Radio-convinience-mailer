@@ -20,11 +20,14 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet var fridayLabel: UILabel!
     @IBOutlet var saturdayLabel: UILabel!
     @IBOutlet var sundayLabel: UILabel!
-    @IBOutlet var view: UIView!
+    @IBOutlet var view: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        view.layer.cornerRadius = 32
+    
+        view.layer.cornerRadius = 24
+        view.clipsToBounds = true
+
         // Initialization code
     }
     
@@ -42,27 +45,32 @@ class CustomTableViewCell: UITableViewCell {
         radioStartTimeLabel.text = formatter.string(from: startTime)
         radioStopTimeLabel.text = formatter.string(from: finishTime)
         if isOn[0] == true {
-            mondayLabel.textColor = UIColor.purple
+            mondayLabel.textColor = UIColor.systemBlue
         }
         if isOn[1] {
-            tuesdayLabel.textColor = UIColor.purple
+            tuesdayLabel.textColor = UIColor.systemBlue
         }
         if isOn[2] {
-            wednesdayLabel.textColor = UIColor.purple
+            wednesdayLabel.textColor = UIColor.systemBlue
         }
         if isOn[3] {
-            tursdayLabel.textColor = UIColor.purple
+            tursdayLabel.textColor = UIColor.systemBlue
         }
         if isOn[4] {
-            fridayLabel.textColor = UIColor.purple
+            fridayLabel.textColor = UIColor.systemBlue
         }
         if isOn[5] {
-            saturdayLabel.textColor = UIColor.purple
+            saturdayLabel.textColor = UIColor.systemBlue
         }
         if isOn[6] {
-            sundayLabel.textColor = UIColor.purple
+            sundayLabel.textColor = UIColor.systemBlue
         }
         
+    }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0))
     }
     
 }
