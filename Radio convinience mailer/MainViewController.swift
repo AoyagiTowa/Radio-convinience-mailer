@@ -43,13 +43,23 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
-        
-        table.reloadData()
+        key_array = []
+        radio_array = []
+        if saveData.object(forKey: "key") as? [String] != nil {
+            key_array = saveData.object(forKey: "key") as! [String]
+        }
+        for i in key_array {
+            guard let get_data = saveData.data(forKey: i) else {
+                return
+            }
+            let radio: RadioClass = try! JSONDecoder().decode(RadioClass.self, from: get_data)
+            //AddRadioViewControllerでは検証できたので多分大丈夫。
+            radio_array.append(radio)
+            table.reloadData()
+        }
     
     }
-    override func viewDidAppear(_ animated: Bool) {
-        table.reloadData()
-    }
+    
     
     
     
