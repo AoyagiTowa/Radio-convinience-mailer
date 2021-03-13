@@ -37,6 +37,8 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate,UIPi
         senderAdressField.layer.cornerRadius = 16
         mainTitleField.layer.cornerRadius = 16
         contentField.layer.cornerRadius = 16
+        hideKeyboardWhenTappedAround_radio()
+
         
         if saveData.object(forKey: "key") as? [String] != nil {
             key_array = saveData.object(forKey: "key") as! [String]
@@ -64,6 +66,11 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate,UIPi
         
         
         // Do any additional setup after loading the view.
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     @IBAction func send(){

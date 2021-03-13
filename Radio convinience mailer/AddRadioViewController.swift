@@ -37,6 +37,8 @@ class AddRadioViewController: UIViewController {
         finishTimePIcker.timeZone = NSTimeZone.local
         finishTimePIcker.datePickerMode = .time
         finishTimePIcker.locale = Locale(identifier: "ja_JP")
+        hideKeyboardWhenTappedAround_radio()
+
         
         
         // Do any additional setup after loading the view.
@@ -85,9 +87,24 @@ class AddRadioViewController: UIViewController {
         saveData.set(data, forKey: radio.radioName)
         saveData.set(key_array, forKey: "key")
     }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
     @IBAction func back(){
         self.navigationController?.popViewController(animated: true)
+    }
+}
+extension UIViewController {
+    func hideKeyboardWhenTappedAround_radio() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.hideKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+
+    @objc func hideKeyboard_radio() {
+        view.endEditing(true)
     }
 }
 
